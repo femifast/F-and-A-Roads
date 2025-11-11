@@ -25,6 +25,10 @@
       font-size: 20px;
       font-weight: bold;
     }
+    .route-label {
+      pointer-events: none;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -69,8 +73,7 @@
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 18,
       attribution: "&copy; OpenStreetMap contributors"
-    }).addTo(map);
-   // ========================
+    }).addTo(map);   // ========================
     // SAMPLE DATA
     // ========================
     const Froads = {
@@ -1336,7 +1339,7 @@ const FRoads25km = {
 ]
 }
 
-  // ===================================
+    // ===================================
     // STATE LAYER
     // ===================================
     let statesLayer;
@@ -1385,7 +1388,7 @@ const FRoads25km = {
     });
 
     // ===================================
-    // MAP STYLE & HIGHLIGHT FUNCTIONS
+    // STYLE & HIGHLIGHT FUNCTIONS
     // ===================================
     function styleRoad(type) {
       return { color: type === "Aroads" ? "blue" : "red", weight: 1.5 };
@@ -1393,14 +1396,8 @@ const FRoads25km = {
 
     let highlightedLayer = null;
 
-    function onEachRoadFeature(feature, layer, type) {
-      const p = feature.properties;
-      layer.bindPopup(`<b>${p.ROUTE}</b><br>Length: ${Math.round(p.Length)} km<br>States: ${p.States}`);
-      layer.on("click", () => highlightLayer(layer, type));
-    }
-
     function highlightLayer(layer, type) {
-      if (highlightedLayer) {
+      if (highlightedLayer && highlightedLayer.setStyle) {
         const prevType = highlightedLayer.feature.properties.ROUTE?.startsWith("A") ? "Aroads" : "Froads";
         highlightedLayer.setStyle(styleRoad(prevType));
       }
@@ -1411,13 +1408,56 @@ const FRoads25km = {
     }
 
     // ===================================
-    // LAYERS
+    // ROUTE LABELS (Light Green)
     // ===================================
-    const AroadsLayer = L.geoJSON(Aroads, { style: styleRoad("Aroads"), onEachFeature: (f, l) => onEachRoadFeature(f, l, "Aroads") });
-    const FroadsLayer = L.geoJSON(Froads, { style: styleRoad("Froads"), onEachFeature: (f, l) => onEachRoadFeature(f, l, "Froads") });
-    const allRoadsLayer = L.layerGroup([AroadsLayer, FroadsLayer]);
-    let activeRoadLayer = allRoadsLayer.addTo(map);
+    function addRouteLabels(geojsonData) {
+      const labelLayer = L.layerGroup();
+      geojsonData.features.forEach(feature => {
+        const routeName = feature.properties.ROUTE || feature.properties.Route;
+        if (!routeName) return;
 
+        let coords = [];
+        if (feature.geometry.type === "MultiLineString") {
+          coords = feature.geometry.coordinates.flat(1);
+        } else if (feature.geometry.type === "LineString") {
+          coords = feature.geometry.coordinates;
+        }
+
+        if (coords.length > 0) {
+          const midIndex = Math.floor(coords.length / 2);
+          const [lng, lat] = coords[midIndex];
+
+          const label = L.divIcon({
+            className: "route-label",
+            html: `<div style="
+              color: lightgreen;
+              font-size:11px;
+              font-weight:bold;
+              text-shadow:1px 1px 2px #000;
+              white-space:nowrap;
+            ">${routeName}</div>`,
+            iconSize: [40, 15]
+          });
+
+          L.marker([lat, lng], { icon: label, interactive: false }).addTo(labelLayer);
+        }
+      });
+      return labelLayer;
+    }
+
+    // ===================================
+    // ROAD LAYERS
+    // ===================================
+    const AroadsLayer = L.geoJSON(Aroads, { style: styleRoad("Aroads"), onEachFeature: (f, l) => l.bindPopup(`<b>${f.properties.ROUTE}</b>`) });
+    const FroadsLayer = L.geoJSON(Froads, { style: styleRoad("Froads"), onEachFeature: (f, l) => l.bindPopup(`<b>${f.properties.ROUTE}</b>`) });
+    const AroadsLabels = addRouteLabels(Aroads);
+    const FroadsLabels = addRouteLabels(Froads);
+
+    const AroadsGroup = L.layerGroup([AroadsLayer, AroadsLabels]);
+    const FroadsGroup = L.layerGroup([FroadsLayer, FroadsLabels]);
+    const allRoadsLayer = L.layerGroup([AroadsLayer, FroadsLayer, AroadsLabels, FroadsLabels]);
+
+    let activeRoadLayer = allRoadsLayer.addTo(map);
     let FRoads25kmLayer = null;
     let ARoads25kmLayer = null;
 
@@ -1439,10 +1479,10 @@ const FRoads25km = {
       if (ARoads25kmLayer) { map.removeLayer(ARoads25kmLayer); ARoads25kmLayer = null; }
 
       if (type === "Aroads") {
-        activeRoadLayer = AroadsLayer.addTo(map);
+        activeRoadLayer = AroadsGroup.addTo(map);
         populateRouteList(Aroads);
       } else if (type === "Froads") {
-        activeRoadLayer = FroadsLayer.addTo(map);
+        activeRoadLayer = FroadsGroup.addTo(map);
         populateRouteList(Froads);
       } else {
         activeRoadLayer = allRoadsLayer.addTo(map);
@@ -1454,7 +1494,7 @@ const FRoads25km = {
     }
 
     // ===================================
-    // UNIQUE ROUTE DROPDOWN
+    // ROUTE LIST
     // ===================================
     function populateRouteList(data) {
       const roadList = document.getElementById("roadList");
@@ -1462,7 +1502,6 @@ const FRoads25km = {
       roadList.disabled = false;
 
       const uniqueRoutes = [...new Set(data.features.map(f => f.properties.ROUTE || f.properties.Route).filter(Boolean))];
-
       uniqueRoutes.forEach(route => {
         const opt = document.createElement("option");
         opt.value = route;
@@ -1472,7 +1511,7 @@ const FRoads25km = {
     }
 
     // ===================================
-    // ROUTE HIGHLIGHT & SEGMENT LOAD
+    // HIGHLIGHT ROUTE + SEGMENTS (from your original)
     // ===================================
     function highlightRoute(routeName) {
       if (!routeName) return;
@@ -1496,82 +1535,78 @@ const FRoads25km = {
     }
 
     // ===================================
-    // SEGMENT POPULATION (25KM)
+    // POPULATE SEGMENTS (unchanged)
     // ===================================
     function populateSegments(routeName) {
-  const segmentList = document.getElementById("segmentList");
-  segmentList.innerHTML = `<option value="">-- Select Segment --</option>`;
-  segmentList.disabled = true;
-  const roadType = document.getElementById("roadType").value;
+      const segmentList = document.getElementById("segmentList");
+      segmentList.innerHTML = `<option value="">-- Select Segment --</option>`;
+      segmentList.disabled = true;
+      const roadType = document.getElementById("roadType").value;
 
-  // Clear old 25 km layers
-  if (FRoads25kmLayer) { map.removeLayer(FRoads25kmLayer); FRoads25kmLayer = null; }
-  if (ARoads25kmLayer) { map.removeLayer(ARoads25kmLayer); ARoads25kmLayer = null; }
+      if (FRoads25kmLayer) { map.removeLayer(FRoads25kmLayer); FRoads25kmLayer = null; }
+      if (ARoads25kmLayer) { map.removeLayer(ARoads25kmLayer); ARoads25kmLayer = null; }
 
-  // ========== F ROADS ==========
-  if (roadType === "Froads") {
-    const filtered = FRoads25km.features.filter(f =>
-      (f.properties.Route || f.properties.ROUTE) === routeName
-    );
-    if (!filtered.length) return;
+      if (roadType === "Froads") {
+        const filtered = FRoads25km.features.filter(f =>
+          (f.properties.Route || f.properties.ROUTE) === routeName
+        );
+        if (!filtered.length) return;
 
-    segmentList.disabled = false;
-    filtered.forEach(f => {
-      const opt = document.createElement("option");
-      opt.value = f.properties.Segment;
-      opt.textContent = f.properties.Segment;
-      segmentList.appendChild(opt);
-    });
+        segmentList.disabled = false;
+        filtered.forEach(f => {
+          const opt = document.createElement("option");
+          opt.value = f.properties.Segment;
+          opt.textContent = f.properties.Segment;
+          segmentList.appendChild(opt);
+        });
 
-    FRoads25kmLayer = L.geoJSON(filtered, {
-      style: { color: "green", weight: 2 },
-      onEachFeature: (f, l) => {
-        const p = f.properties;
-        l.bindPopup(`<b>${p.NAME}</b><br>State: ${p.State}<br>LGA: ${p.Lga}<br>Length: ${p.len.toFixed(2)} km`);
-        l.on("click", () => highlightLayer(l));
+        FRoads25kmLayer = L.geoJSON(filtered, {
+          style: { color: "green", weight: 2 },
+          onEachFeature: (f, l) => {
+            const p = f.properties;
+            l.bindPopup(`<b>${p.NAME}</b><br>State: ${p.State}<br>LGA: ${p.Lga}<br>Length: ${p.len.toFixed(2)} km`);
+            l.on("click", () => highlightLayer(l));
+          }
+        }).addTo(map);
+
+        if (FRoads25kmLayer.getBounds && FRoads25kmLayer.getBounds().isValid()) {
+          map.fitBounds(FRoads25kmLayer.getBounds(), { animate: true });
+        }
       }
-    }).addTo(map);
 
-    // ✅ Only zoom if layer has valid geometry
-    if (FRoads25kmLayer.getBounds && FRoads25kmLayer.getBounds().isValid()) {
-      map.fitBounds(FRoads25kmLayer.getBounds(), { animate: true });
+      else if (roadType === "Aroads") {
+        const filtered = ARoads25km.features.filter(f =>
+          (f.properties.Route || f.properties.ROUTE) === routeName
+        );
+        if (!filtered.length) return;
+
+        segmentList.disabled = false;
+        filtered.forEach(f => {
+          const opt = document.createElement("option");
+          opt.value = f.properties.Segment;
+          opt.textContent = f.properties.Segment;
+          segmentList.appendChild(opt);
+        });
+
+        ARoads25kmLayer = L.geoJSON(filtered, {
+          style: { color: "orange", weight: 2 },
+          onEachFeature: (f, l) => {
+            const p = f.properties;
+            l.bindPopup(`<b>${p.NAME}</b><br>State: ${p.State}<br>LGA: ${p.Lga}<br>Length: ${p.len?.toFixed?.(2) || 25} km`);
+            l.on("click", () => highlightLayer(l));
+          }
+        }).addTo(map);
+
+        setTimeout(() => {
+          if (ARoads25kmLayer.getBounds && ARoads25kmLayer.getBounds().isValid()) {
+            map.fitBounds(ARoads25kmLayer.getBounds(), { animate: true });
+          }
+        }, 150);
+      }
     }
-  }
 
-  // ========== A ROADS ==========
-  else if (roadType === "Aroads") {
-    const filtered = ARoads25km.features.filter(f =>
-      (f.properties.Route || f.properties.ROUTE) === routeName
-    );
-    if (!filtered.length) return;
-
-    segmentList.disabled = false;
-    filtered.forEach(f => {
-      const opt = document.createElement("option");
-      opt.value = f.properties.Segment;
-      opt.textContent = f.properties.Segment;
-      segmentList.appendChild(opt);
-    });
-
-    ARoads25kmLayer = L.geoJSON(filtered, {
-      style: { color: "orange", weight: 2 },
-      onEachFeature: (f, l) => {
-        const p = f.properties;
-        l.bindPopup(`<b>${p.NAME}</b><br>State: ${p.State}<br>LGA: ${p.Lga}<br>Length: ${p.len?.toFixed?.(2) || 25} km`);
-        l.on("click", () => highlightLayer(l));
-      }
-    }).addTo(map);
-
-    // ✅ Wait a moment for rendering, then zoom in safely
-    setTimeout(() => {
-      if (ARoads25kmLayer.getBounds && ARoads25kmLayer.getBounds().isValid()) {
-        map.fitBounds(ARoads25kmLayer.getBounds(), { animate: true });
-      }
-    }, 150);
-  }
-}
     // ===================================
-    // HIGHLIGHT SELECTED SEGMENT
+    // SEGMENT HIGHLIGHT (unchanged)
     // ===================================
     function highlightSegment(segmentId) {
       const roadType = document.getElementById("roadType").value;
