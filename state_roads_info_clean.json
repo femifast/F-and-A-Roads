@@ -1,0 +1,2596 @@
+{
+  "ABIA": [
+    {
+      "route": "F107",
+      "description": "Umuahia Bende -Ohafia",
+      "length": 46.0
+    },
+    {
+      "route": "F234",
+      "description": "Arochukwu - Ohafia - Ebonyi State Border",
+      "length": 65.0
+    },
+    {
+      "route": "F232",
+      "description": "Umuahia - Ariam-Akwa Ibom State Border",
+      "length": 31.0
+    },
+    {
+      "route": "F112",
+      "description": "Uturu- Mile 2- Ebonyi State Border",
+      "length": 20.0
+    },
+    {
+      "route": "F108",
+      "description": "Arochukwu- Ikot Ekpene Cross River State Border",
+      "length": 26.0
+    },
+    {
+      "route": "A3",
+      "description": "Enugu State Border- Umuahia-Rivers State Border (2x131)",
+      "length": 262.0
+    },
+    {
+      "route": "A3",
+      "description": "Enugu State border-Isiukwuato Umuahia River State Border",
+      "length": 102.0
+    },
+    {
+      "route": "A342",
+      "description": "Aba-Akwa Ibom State Border",
+      "length": 19.0
+    },
+    {
+      "route": "A6",
+      "description": "Imo state border -Umuowo Umunika Junction",
+      "length": 6.0
+    },
+    {
+      "route": "F104",
+      "description": "Aba-Azuniri - Akwa Ibom State Border",
+      "length": 25.0
+    }
+  ],
+  "ADAMAWA": [
+    {
+      "route": "A131",
+      "description": "Gombe- Mararaba-Madagali- Borno State Border",
+      "length": 192.0
+    },
+    {
+      "route": "A13",
+      "description": "Mayo Belwa Jereng- Taraba State Border",
+      "length": 31.0
+    },
+    {
+      "route": "A8",
+      "description": "Mayo Belwa-Jada",
+      "length": 38.0
+    },
+    {
+      "route": "A8",
+      "description": "Jaa-Ganye-Gandikila-Taraba State Border",
+      "length": 148.0
+    },
+    {
+      "route": "A345",
+      "description": "Yola-Numan-Lafia-Gombe state border",
+      "length": 116.0
+    },
+    {
+      "route": "A13",
+      "description": "Yola-song-Gombe",
+      "length": 118.0
+    },
+    {
+      "route": "F253",
+      "description": "Gombe-Garkida-Borno State Border",
+      "length": 41.0
+    },
+    {
+      "route": "F255-1",
+      "description": "Mubi-Sahuda- Cameroon Border",
+      "length": 47.0
+    },
+    {
+      "route": "F252",
+      "description": "Sebore - Kariabi - Ganye",
+      "length": 103.0
+    },
+    {
+      "route": "A345",
+      "description": "Doubeli Bye Pass",
+      "length": 12.0
+    },
+    {
+      "route": "F252-1",
+      "description": "Yola-Fufore",
+      "length": 25.0
+    },
+    {
+      "route": "F255",
+      "description": "Mubi-Sorau",
+      "length": 85.0
+    },
+    {
+      "route": "A13",
+      "description": "Ngurore- Mayo- Belwa",
+      "length": 44.0
+    },
+    {
+      "route": "A4",
+      "description": "Numan- MayoLope-Taraba State Border",
+      "length": 50.0
+    },
+    {
+      "route": "A4",
+      "description": "Numan-Guyuk- Borno State Border",
+      "length": 69.0
+    },
+    {
+      "route": "F252-1",
+      "description": "Fufure -Gurin",
+      "length": 25.0
+    }
+  ],
+  "AKWA IBOM": [
+    {
+      "route": "F232",
+      "description": "Abak-Ikot Ekpene- Ntodang- Abia State Border",
+      "length": 49.0
+    },
+    {
+      "route": "F104",
+      "description": "Abia State Border- Iwukem-Elparakwa",
+      "length": 36.0
+    },
+    {
+      "route": "F232",
+      "description": "Ete- abak Road",
+      "length": 48.0
+    },
+    {
+      "route": "nan",
+      "description": "Spur to Etinan",
+      "length": 2.5
+    },
+    {
+      "route": "F104",
+      "description": "Elparakwa Ikot Ubo",
+      "length": 43.4
+    },
+    {
+      "route": "A342",
+      "description": "Ikot Ekpene - Uyo-Oron  James Town",
+      "length": 132.0
+    },
+    {
+      "route": "A342",
+      "description": "Ikot Ekpene -Itu Road (Parallel Road)",
+      "length": 21.0
+    },
+    {
+      "route": "F104",
+      "description": "Abak Ikot Ibritan- Ikot Ekara",
+      "length": 63.0
+    },
+    {
+      "route": "A342",
+      "description": "Ikot Ekpene-Abia S/B",
+      "length": 25.0
+    },
+    {
+      "route": "F234",
+      "description": "Uyo-Itu-Cross iver State Border",
+      "length": 21.0
+    }
+  ],
+  "ANAMBRA": [
+    {
+      "route": "A232",
+      "description": "AZU- OGBUNIKE - UMULERI",
+      "length": 7.0
+    },
+    {
+      "route": "F228",
+      "description": "OKIJA-IMO STATE BORDER",
+      "length": 19.0
+    },
+    {
+      "route": "F111",
+      "description": "IHIALA- ISSEKE- IMO STATE BORDER",
+      "length": 8.0
+    },
+    {
+      "route": "F226",
+      "description": "Otuocha -Abagana -Nnobi Road",
+      "length": 57.0
+    },
+    {
+      "route": "F112",
+      "description": "Oba- Nnewi- Okija",
+      "length": 34.0
+    },
+    {
+      "route": "F225",
+      "description": "Onitsha - Omosi Agu- Enugu state border",
+      "length": 76.0
+    },
+    {
+      "route": "F229",
+      "description": "Awka -Ekwulobia-Uga-Imo State Border",
+      "length": 34.0
+    },
+    {
+      "route": "F112",
+      "description": "Nnewi - Ekwulobia Ihite Road",
+      "length": 57.0
+    },
+    {
+      "route": "A6",
+      "description": "Onitsha - Amorka Imo state Border",
+      "length": 58.0
+    },
+    {
+      "route": "A232",
+      "description": "Onitsha - amansea- Enugu state dual carriageway (52x2)",
+      "length": 104.0
+    },
+    {
+      "route": "F112",
+      "description": "Oba-Nnewi- Uga-Imo State Border",
+      "length": 40.4
+    }
+  ],
+  "BAUCHI": [
+    {
+      "route": "A345",
+      "description": "Bauchi - Gombe State Border",
+      "length": 116.0
+    },
+    {
+      "route": "F245",
+      "description": "Ningi- Fuska Mata Road",
+      "length": 193.0
+    },
+    {
+      "route": "F248",
+      "description": "Azare - Yana Road",
+      "length": 39.0
+    },
+    {
+      "route": "F249",
+      "description": "Azare - Misau Road",
+      "length": 54.0
+    },
+    {
+      "route": "A3",
+      "description": "Plateau S/B Bauchi- kari",
+      "length": 246.0
+    },
+    {
+      "route": "A237",
+      "description": "Jigawa S/B- Yana- kari-Yobe S/B",
+      "length": 146.0
+    },
+    {
+      "route": "F131",
+      "description": "Jigawa S/B Udubo-Yobe S/B",
+      "length": 100.0
+    },
+    {
+      "route": "F130",
+      "description": "Azare-Bulachwa (Yobe S/B) and Azare- Jamaare Jigawa S/B",
+      "length": 119.0
+    },
+    {
+      "route": "F246",
+      "description": "Bauchi-Ningi- Samamiya (Jigawa S/B",
+      "length": 147.0
+    },
+    {
+      "route": "F247",
+      "description": "Bauchi- Tafewa Balewa- Plateau S/B",
+      "length": 120.0
+    }
+  ],
+  "BAYELSA": [
+    {
+      "route": "F227",
+      "description": "Yenegoa- Kolo Road",
+      "length": 32.6
+    },
+    {
+      "route": "F103",
+      "description": "Patani -Kaiama-Mbiama Rivers S/B",
+      "length": 36.0
+    },
+    {
+      "route": "F227",
+      "description": "Nembe -Brass Road",
+      "length": 36.5
+    },
+    {
+      "route": "F227",
+      "description": "Mbiama - Yenegoa Road",
+      "length": 30.0
+    },
+    {
+      "route": "F227",
+      "description": "Kolo-Nembe Road",
+      "length": 32.7
+    }
+  ],
+  "BENUE": [
+    {
+      "route": "F238",
+      "description": "Cross River S/B- Yahe- oju Otukpo Oweto",
+      "length": 224.0
+    },
+    {
+      "route": "F239",
+      "description": "Ugboju Ega- Kogi S/B",
+      "length": 40.0
+    },
+    {
+      "route": "F121",
+      "description": "Makurdi -Yandec-Burruku-Zaki- Biami Road",
+      "length": 153.0
+    },
+    {
+      "route": "F120",
+      "description": "Vandeikya -Obudu Road",
+      "length": 25.0
+    },
+    {
+      "route": "A344",
+      "description": "Aliade-Gboko-Yandev-Katsina Ala",
+      "length": 118.0
+    },
+    {
+      "route": "A233",
+      "description": "Otukpo -Kogi S/B",
+      "length": 10.0
+    },
+    {
+      "route": "A12",
+      "description": "Katsina Ala- Tor Danga Taraba S/B",
+      "length": 62.0
+    },
+    {
+      "route": "A4",
+      "description": "Cross River S/B -Katsina Ala-Zaki Biam-Taraba S/B",
+      "length": 150.0
+    },
+    {
+      "route": "A3",
+      "description": "Nasarawa S/B -Makurdi-Aliade Otukpo-Enugu S/B",
+      "length": 232.0
+    },
+    {
+      "route": "F239",
+      "description": "Awajir-Tse Agberagba-Wuese-Ogoja (Cross River S/B",
+      "length": 68.0
+    }
+  ],
+  "BORNO": [
+    {
+      "route": "F256",
+      "description": "Maiduguri-Gubior-Damasak Road",
+      "length": 184.0
+    },
+    {
+      "route": "F135",
+      "description": "Kukawa-Kauwa Baga Road",
+      "length": 35.0
+    },
+    {
+      "route": "F253",
+      "description": "Adamawa S/B Biu Yobe S/B",
+      "length": 106.0
+    },
+    {
+      "route": "F254",
+      "description": "Uba-Mbalala,Damboa-Benisheik road",
+      "length": 193.0
+    },
+    {
+      "route": "F257",
+      "description": "Maiduguri Gajiram-Monguno-Kauwa-Mallam Fatori Road",
+      "length": 271.0
+    },
+    {
+      "route": "F258",
+      "description": "Dikwa-Monguno Road",
+      "length": 80.0
+    },
+    {
+      "route": "F134",
+      "description": "Dikwa-Gajiram-Gubio Road (Desert Track)",
+      "length": 140.0
+    },
+    {
+      "route": "F260",
+      "description": "Pulka-Kirawa Border Spur and Wulgo Spur",
+      "length": 32.0
+    },
+    {
+      "route": "F259",
+      "description": "Bama-Guluma-Gana-Kaka Gulumba Road",
+      "length": 230.0
+    },
+    {
+      "route": "A4",
+      "description": "Maiduguri -Bama Road",
+      "length": 66.0
+    },
+    {
+      "route": "A3",
+      "description": "Gamboru-Dikwa-Maiduguri-Benisheik-Yobe S/B",
+      "length": 241.0
+    },
+    {
+      "route": "F129",
+      "description": "Biu-Wuyo-Gombe Road",
+      "length": 83.0
+    },
+    {
+      "route": "F128",
+      "description": "MallamFatobi - Damasak-Yobe state Border",
+      "length": 150.0
+    },
+    {
+      "route": "A13",
+      "description": "Bama Gwaza-Adamawa S/B",
+      "length": 73.0
+    },
+    {
+      "route": "A4",
+      "description": "Maiduguri-Damboa-Biu Adamawa State Border",
+      "length": 274.0
+    },
+    {
+      "route": "A4 7",
+      "description": "Bama Junction - Banki- cameroon border",
+      "length": 49.0
+    }
+  ],
+  "CROSS RIVER": [
+    {
+      "route": "F108",
+      "description": "orira -Ikot Okpara -Isu (Abia state border)",
+      "length": 25.0
+    },
+    {
+      "route": "F214",
+      "description": "Itu (Akwa Ibom S/B) - Arochukwu (Abia S/B)",
+      "length": 27.9
+    },
+    {
+      "route": "F238",
+      "description": "Yahe- Wanorom-Amieke (Benue S/B)",
+      "length": 40.0
+    },
+    {
+      "route": "F239",
+      "description": "Mfon-Okuku-Alifokpa (Benue S/B)",
+      "length": 65.0
+    },
+    {
+      "route": "F236",
+      "description": "Cross River Mils- Obubra- Ebonyi S/B",
+      "length": 18.94
+    },
+    {
+      "route": "F235",
+      "description": "Okurikang-Akpap-Creek Town",
+      "length": 28.0
+    },
+    {
+      "route": "F120",
+      "description": "Obudu-Obudu cattle Ranch",
+      "length": 70.0
+    },
+    {
+      "route": "F113",
+      "description": "Ugep-Ediba-Itigidi-Abba-Omega (Ebonyi S/B)",
+      "length": 26.0
+    },
+    {
+      "route": "A343",
+      "description": "Nkonfap-Mfom-ahe-Onuwapu River (Ebonyi S/B)",
+      "length": 60.0
+    },
+    {
+      "route": "A4 2",
+      "description": "Calabar- Ikoneto Road",
+      "length": 26.0
+    },
+    {
+      "route": "A4,2",
+      "description": "Calabar - Ekang-Mfum-Ikom and Calabar -Atimbo-Ikang plus Airport- FGGC (Ikot Ekpo)",
+      "length": 216.9
+    },
+    {
+      "route": "F237",
+      "description": "Ikom-Wula-Obudu Road",
+      "length": 109.3
+    },
+    {
+      "route": "A4,1",
+      "description": "Odukpani (Junction) It (Akwa Ibom S/B)",
+      "length": 30.0
+    },
+    {
+      "route": "A4",
+      "description": "Calabar -Ikom-Nkonfap-Gakem (Benue S/B) Old Odukpani Eburutu",
+      "length": 332.2
+    }
+  ],
+  "DELTA": [
+    {
+      "route": "F 224",
+      "description": "Kwale-Umutu",
+      "length": 38.0
+    },
+    {
+      "route": "F 110",
+      "description": "Ugbenu Junction -koko",
+      "length": 28.0
+    },
+    {
+      "route": "F 223",
+      "description": "Asaba Junction- Ogwashi-Uku",
+      "length": 82.0
+    },
+    {
+      "route": "F 109",
+      "description": "Agbor -Agbonta-Owa-Ogherefe",
+      "length": 37.0
+    },
+    {
+      "route": "F 109",
+      "description": "Umutu- Amukpe",
+      "length": 70.0
+    },
+    {
+      "route": "F 223",
+      "description": "Kwale-Oleh Junction",
+      "length": 39.0
+    },
+    {
+      "route": "F 223",
+      "description": "Oleh Junction - Ugheli",
+      "length": 22.0
+    },
+    {
+      "route": "F 234",
+      "description": "Umutu-Agbaro- Edo S/B",
+      "length": 29.5
+    },
+    {
+      "route": "A 232",
+      "description": "Asaba -Agbor -Edo S/B",
+      "length": 85.0
+    },
+    {
+      "route": "F 103",
+      "description": "Effurum-Ughelli-Patani Bayelsa S/B",
+      "length": 75.0
+    },
+    {
+      "route": "A 2",
+      "description": "Effurum - Ugbenu - Edo S/B",
+      "length": 69.0
+    },
+    {
+      "route": "A 2",
+      "description": "Warri Bye Pass",
+      "length": 58.0
+    },
+    {
+      "route": "A 2",
+      "description": "Old Warri Port- Effurum",
+      "length": 6.0
+    }
+  ],
+  "EBONYI": [
+    {
+      "route": "nan",
+      "description": "Old Abakaliki-Ogoja",
+      "length": 17.0
+    },
+    {
+      "route": "F 234",
+      "description": "Abakaliki-Afikpo",
+      "length": 60.0
+    },
+    {
+      "route": "F 236",
+      "description": "Abakaliki-Oferekpe-Cross River S/B",
+      "length": 44.0
+    },
+    {
+      "route": "A 343",
+      "description": "Abakaliki-Nkalagu (Enugu S/B)",
+      "length": 47.0
+    },
+    {
+      "route": "F 117",
+      "description": "Nkalagu-Ikem-Enugu S/B",
+      "length": 16.0
+    },
+    {
+      "route": "F 234",
+      "description": "Oso-Edda-Owutu-Ohafia Jct Abia S/B",
+      "length": 20.0
+    },
+    {
+      "route": "F 112",
+      "description": "Abia S/B-Afikpo",
+      "length": 78.0
+    },
+    {
+      "route": "A 343",
+      "description": "Abakaliki-Ndubia-Yahe (Cross River S/B)",
+      "length": 70.0
+    }
+  ],
+  "EKITI": [
+    {
+      "route": "F 209",
+      "description": "Ado Ekiti-Ifaki- Otun Kwara S/B",
+      "length": 54.6
+    },
+    {
+      "route": "F 117",
+      "description": "Ado Ekiti- Ikere -Ondo S/B",
+      "length": 25.0
+    },
+    {
+      "route": "F 117",
+      "description": "Ado-Ekiti-Igede Road",
+      "length": 15.7
+    },
+    {
+      "route": "F 215",
+      "description": "Omuo-Oyin Ondo S/B",
+      "length": 4.0
+    },
+    {
+      "route": "F 117",
+      "description": "Ado Ekiti Iluomoba-Imesi - Ondo S/B Road",
+      "length": 55.0
+    },
+    {
+      "route": "F 117",
+      "description": "Efon Alaaye Spur",
+      "length": 4.9
+    },
+    {
+      "route": "F 117",
+      "description": "Efon Alaaye Erinmo -Osun S/B",
+      "length": 24.0
+    },
+    {
+      "route": "F 117",
+      "description": "Igede-Itawure",
+      "length": 25.3
+    },
+    {
+      "route": "F 117",
+      "description": "Ado Ekiti-Igede-Itawure Road",
+      "length": 34.2
+    },
+    {
+      "route": "F 215",
+      "description": "Omuo-Ife-Olukotun-Kogi S/B",
+      "length": 7.5
+    },
+    {
+      "route": "F 117",
+      "description": "Itawure-Esaoke (Osun state Border)",
+      "length": 13.0
+    },
+    {
+      "route": "F 117",
+      "description": "Itawure -Efon Alaaye Spur",
+      "length": 9.0
+    },
+    {
+      "route": "F 119",
+      "description": "Omuo-Iyamoye Kogi S/B",
+      "length": 5.0
+    }
+  ],
+  "ENUGU": [
+    {
+      "route": "F 113",
+      "description": "Udi-Ozalla-Nara-Nker -Efi",
+      "length": 56.0
+    },
+    {
+      "route": "A 343",
+      "description": "Enugu-Ebonyi S/B",
+      "length": 40.0
+    },
+    {
+      "route": "A 232",
+      "description": "9th Mile - Enugu (New Market)",
+      "length": 10.0
+    },
+    {
+      "route": "F 116",
+      "description": "Nsukka-Adani",
+      "length": 48.0
+    },
+    {
+      "route": "F 117",
+      "description": "Ebonyi S/B-Eha-Amufu-Ikem",
+      "length": 25.0
+    },
+    {
+      "route": "F 117",
+      "description": "Ikem-ObolloAfor-Nsukka",
+      "length": 42.0
+    },
+    {
+      "route": "F 117",
+      "description": "Nsukka-kogi S/Border",
+      "length": 25.0
+    },
+    {
+      "route": "F 225",
+      "description": "Adani-Anambra S/Border",
+      "length": 20.0
+    },
+    {
+      "route": "F 233",
+      "description": "Enugu-Awgu (Old Road)",
+      "length": 56.0
+    },
+    {
+      "route": "F 116",
+      "description": "Adari-Ogurugu-Kogi S/B",
+      "length": 20.0
+    },
+    {
+      "route": "A 232",
+      "description": "Enugu-Onitsha Dual C-way ramps",
+      "length": NaN
+    },
+    {
+      "route": "A 232",
+      "description": "Oji River-Amansea (old Road)",
+      "length": NaN
+    },
+    {
+      "route": "A 3",
+      "description": "9th Mile-Opi- Nsukka (old Road)",
+      "length": NaN
+    },
+    {
+      "route": "A 232",
+      "description": "Enugu-Onitsha Dual C-way spur to New market",
+      "length": NaN
+    },
+    {
+      "route": "A 232",
+      "description": "Enugu Oji river-Anambra S/B (Dual)",
+      "length": NaN
+    },
+    {
+      "route": "A 3",
+      "description": "Enugu-Abia S/B (Dual)",
+      "length": NaN
+    },
+    {
+      "route": "A 3",
+      "description": "Enugu_Port Harcourt Dual C-way Ramps",
+      "length": NaN
+    },
+    {
+      "route": "A 3",
+      "description": "9th Mile Corner-Obolo Afor-Benue S/Border",
+      "length": NaN
+    },
+    {
+      "route": "A 3",
+      "description": "Enugu-Airport Road",
+      "length": NaN
+    },
+    {
+      "route": "A 3",
+      "description": "9th Mile-Oji River (old Road)",
+      "length": NaN
+    },
+    {
+      "route": "A 3",
+      "description": "Oji River-Awgu-Abia state boundary (Old Align)",
+      "length": 45.0
+    }
+  ],
+  "FCT": [
+    {
+      "route": "A 124",
+      "description": "Niger S/B -F.C.T-Niger S/B",
+      "length": 20.0
+    },
+    {
+      "route": "A 234",
+      "description": "Zuba-Garki-Nasarawa S/B",
+      "length": 50.0
+    },
+    {
+      "route": "A 2",
+      "description": "Kogi S/B - Abaji-Zuba-Niger S/B",
+      "length": 88.0
+    },
+    {
+      "route": "F 124",
+      "description": "Niger S/B - Abaji- Bukga-Nasarawa S/B",
+      "length": 78.6
+    }
+  ],
+  "GOMBE": [
+    {
+      "route": "A 345",
+      "description": "GOMBE - BAUCHI S/B",
+      "length": 40.0
+    },
+    {
+      "route": "F 251",
+      "description": "GOMBE-NAFADA-YOBE S/D ROAD",
+      "length": 128.0
+    },
+    {
+      "route": "F 129",
+      "description": "GOMBE -WUYO (BORNO S/B)",
+      "length": 63.0
+    },
+    {
+      "route": "F 250",
+      "description": "BILIRI- FILIYA TARABA S/B",
+      "length": 44.0
+    },
+    {
+      "route": "F 129",
+      "description": "GOBE-WUYO ROAD",
+      "length": 65.0
+    },
+    {
+      "route": "A 345",
+      "description": "GOMBE -  ADAMAWA S/B",
+      "length": 145.0
+    }
+  ],
+  "IMO": [
+    {
+      "route": "F 229",
+      "description": "Rivers Border (Omuapu)-owerri-orlu Anambra S/B",
+      "length": 97.0
+    },
+    {
+      "route": "F  111",
+      "description": "Anambra S/B - Orlu -umuduru",
+      "length": 51.0
+    },
+    {
+      "route": "F  106",
+      "description": "Owerri - Obowo -Abia STATE",
+      "length": 46.0
+    },
+    {
+      "route": "F 112",
+      "description": "Anambra S/B - Akokwa -Okigwe -Abia S/B",
+      "length": 36.0
+    },
+    {
+      "route": "F 228",
+      "description": "Rivers S/B -Egbema -oguta-Anambra S/B",
+      "length": 45.0
+    },
+    {
+      "route": "A 6",
+      "description": "Anambra S/B Owerri -Abia S/B",
+      "length": 82.0
+    },
+    {
+      "route": "A 3",
+      "description": "Ihube  -okigwe -Abia S/B (Old)",
+      "length": 83.0
+    },
+    {
+      "route": "A 3",
+      "description": "Abia S /B -Okigwe - Abia S/B (Dual)",
+      "length": 120.0
+    },
+    {
+      "route": "F231",
+      "description": "Okpala - Rivers S/B",
+      "length": 15.0
+    }
+  ],
+  "JIGAWA": [
+    {
+      "route": "F 128-1",
+      "description": "Gumel - Maigatari (Niger Republic Border)",
+      "length": 24.0
+    },
+    {
+      "route": "F 249",
+      "description": "Gamayin -Balangu - Bauchi S/B",
+      "length": 40.0
+    },
+    {
+      "route": "F 130",
+      "description": "Kano S/B -Dutse -kiyuta -Bauchi",
+      "length": 57.0
+    },
+    {
+      "route": "F 131",
+      "description": "Gamayin -kafin kariya -Kano S/B",
+      "length": 48.0
+    },
+    {
+      "route": "F 131",
+      "description": "Gamayin -Katagun -Bauchi S/B",
+      "length": 40.0
+    },
+    {
+      "route": "F 245",
+      "description": "Lamaniya -Ningi - Bauchi  S/B",
+      "length": 15.0
+    },
+    {
+      "route": "F 249",
+      "description": "Hadejia -Gamayin Road",
+      "length": 24.0
+    },
+    {
+      "route": "F 244",
+      "description": "Kano S/B -Babura -Niger Republic Border",
+      "length": 65.0
+    },
+    {
+      "route": "F 128",
+      "description": "Kano S/B -Garki Gumel - Mallam Madori - Hadejia",
+      "length": 185.0
+    },
+    {
+      "route": "F 128",
+      "description": "Hadejia -Birninwa -Yobe S/B",
+      "length": 76.0
+    },
+    {
+      "route": "A 237",
+      "description": "Kano state Border -Birnin kudu - Bauchi state Border (formerly Kano -Kari",
+      "length": 82.0
+    },
+    {
+      "route": "A 2",
+      "description": "Kano S/B -Kazaure -Katsina S/B",
+      "length": 34.0
+    },
+    {
+      "route": "F 131",
+      "description": "Gamayin -Kafin -Hausa jahun",
+      "length": 61.0
+    }
+  ],
+  "KADUNA": [
+    {
+      "route": "A 2",
+      "description": "Kaduna Bye -pass (Dual Carriageway)",
+      "length": 48.0
+    },
+    {
+      "route": "A 2",
+      "description": "Kaduna Township Road (Ahmadu bello Way) Dual Carriageway",
+      "length": 36.0
+    },
+    {
+      "route": "F 127",
+      "description": "Kagoro -Manchock - Plateau S/B",
+      "length": 16.0
+    },
+    {
+      "route": "F 126",
+      "description": "Sabon birnin Gwari -Katsina S/B",
+      "length": 105.0
+    },
+    {
+      "route": "F 127",
+      "description": "Birnin Gwari -Zamfara S/B",
+      "length": 8.0
+    },
+    {
+      "route": "F 238",
+      "description": "Kachia -Kwoi -Nasarawa S/B",
+      "length": 80.0
+    },
+    {
+      "route": "A 236",
+      "description": "Zaria -pambegua - saminaka - plateau S/B",
+      "length": 170.0
+    },
+    {
+      "route": "F 243",
+      "description": "Saminaka -Kano S/B",
+      "length": 25.0
+    },
+    {
+      "route": "A 125",
+      "description": "kaduna -Dabo -B/Gwari -Niger S/BS",
+      "length": 124.0
+    },
+    {
+      "route": "F 240",
+      "description": "Fadan karshe -kunku -plateau",
+      "length": 40.0
+    },
+    {
+      "route": "A 236",
+      "description": "Zaria -katsina S/B",
+      "length": 47.0
+    },
+    {
+      "route": "A 11",
+      "description": "Katabu - pambegua",
+      "length": 100.0
+    },
+    {
+      "route": "A 3",
+      "description": "Gimi -Fadam -Wute plateau S/B",
+      "length": 55.0
+    },
+    {
+      "route": "A 3",
+      "description": "Gimi -plateau S/B",
+      "length": 4.0
+    },
+    {
+      "route": "A 2",
+      "description": "Zaria -Makarfi (Old Road)",
+      "length": 54.0
+    },
+    {
+      "route": "A 2",
+      "description": "Kaduna -Zaria -Kano S/Border (Dual)",
+      "length": 250.0
+    },
+    {
+      "route": "A 2",
+      "description": "Kaduna -Abuja (Niger S/B) Dual",
+      "length": 274.0
+    },
+    {
+      "route": "A 235",
+      "description": "Kaduna -Kachia - Kafanchan -Gimi",
+      "length": 252.0
+    }
+  ],
+  "KANO": [
+    {
+      "route": "F 131",
+      "description": "Wudil -Kaffin -Kaniya -Jigawa S/B",
+      "length": 60.0
+    },
+    {
+      "route": "F 244",
+      "description": "Kunya -Jigawa S/B",
+      "length": 40.0
+    },
+    {
+      "route": "F 130",
+      "description": "Kwana - Huguma -Jigawa S/B",
+      "length": 15.0
+    },
+    {
+      "route": "F 243",
+      "description": "Kaffin -Mayaki -Saminaka -Kaduna S/B",
+      "length": 125.0
+    },
+    {
+      "route": "F 128",
+      "description": "Kano - Gwaro -Katsina S/B",
+      "length": 90.0
+    },
+    {
+      "route": "F 128",
+      "description": "Kano Gabasawa Jigawa S/B",
+      "length": 60.0
+    },
+    {
+      "route": "A 9",
+      "description": "Kano -Bichi Katsina S/B",
+      "length": 90.0
+    },
+    {
+      "route": "A 2",
+      "description": "Kano -Danbatta -Jigawa S/B",
+      "length": 80.0
+    },
+    {
+      "route": "A 2",
+      "description": "Kano -Kafin Maiyaki (Kaduna S/B) Dual",
+      "length": 210.0
+    },
+    {
+      "route": "A 237",
+      "description": "Kano - Kwana -Haguma -Jigawa S/B",
+      "length": 115.0
+    }
+  ],
+  "KATSINA": [
+    {
+      "route": "A 126",
+      "description": "Kaduna S/B -Funta -Faskari -Zamfara S/B",
+      "length": 70.0
+    },
+    {
+      "route": "A 9",
+      "description": "Kano S/Border -katsina - Jibiya Road",
+      "length": 128.0
+    },
+    {
+      "route": "F 219",
+      "description": "Zango -Daura -Katsina -Kankama -karfi Road",
+      "length": 262.0
+    },
+    {
+      "route": "F 216",
+      "description": "Yashe -Dayi -Funtua -Danduma - Kaduna S/B",
+      "length": 178.0
+    },
+    {
+      "route": "F 137",
+      "description": "Magana -Jibiya Zamfara S/B",
+      "length": 30.0
+    },
+    {
+      "route": "F 128",
+      "description": "Kano S/B -Dayi -Kankara - Zamfara S/B",
+      "length": 72.0
+    },
+    {
+      "route": "A 2",
+      "description": "Jigawa S/B - Daura - Kongolam",
+      "length": 42.0
+    },
+    {
+      "route": "F 136",
+      "description": "Kankiya -Dutsinma Road",
+      "length": 48.0
+    }
+  ],
+  "KEBBI": [
+    {
+      "route": "F 132",
+      "description": "Kalgo -Jega",
+      "length": 24.0
+    },
+    {
+      "route": "F 203",
+      "description": "Kalgo -Kamba Niger republic Border",
+      "length": 111.0
+    },
+    {
+      "route": "F 214",
+      "description": "Zamfara S/B Zuru Ganji -Niger S/B",
+      "length": 62.0
+    },
+    {
+      "route": "F 203",
+      "description": "Argungu -Birnin Kebb i- Kalgo",
+      "length": 62.0
+    },
+    {
+      "route": "F 133",
+      "description": "Sokoto S/B - Argungu -Bwi",
+      "length": 75.0
+    },
+    {
+      "route": "F 128",
+      "description": "Niger S/B -Birnin Yauri -Rofia Niger S/B",
+      "length": 56.0
+    },
+    {
+      "route": "F 128",
+      "description": "Niger S/B -Birindaji - Ribah -Wasagu - Niger S/B",
+      "length": 100.0
+    },
+    {
+      "route": "F 210",
+      "description": "Birnin Yauri -Malando -Wara -Niger S/B",
+      "length": 89.0
+    },
+    {
+      "route": "A 1",
+      "description": "Sokoto S/B -Jega -Yelwa - Malando - Niger S/B",
+      "length": 240.0
+    },
+    {
+      "route": "F 203",
+      "description": "Tuga - Kaoje",
+      "length": 22.4
+    },
+    {
+      "route": "F 132",
+      "description": "Jega -Sokoto S/B",
+      "length": 21.0
+    }
+  ],
+  "KOGI": [
+    {
+      "route": "A 233",
+      "description": "Ayangba - Ankpa - Ofa (Benue state Border)",
+      "length": 94.0
+    },
+    {
+      "route": "F 221",
+      "description": "Aiyetoro - Eggan",
+      "length": 102.0
+    },
+    {
+      "route": "F 215",
+      "description": "Egbe  - Omuo",
+      "length": 80.0
+    },
+    {
+      "route": "F 215",
+      "description": "Egbe - Isanlu - Esa (Kwara S/B)",
+      "length": 40.0
+    },
+    {
+      "route": "F 220",
+      "description": "Kabba Ayere (Ondo S/B)",
+      "length": 19.0
+    },
+    {
+      "route": "F 117",
+      "description": "Idah Adoru - Enugu state Border",
+      "length": 65.0
+    },
+    {
+      "route": "F 119",
+      "description": "Ajaokuta -Itobe -Ayangba",
+      "length": 56.0
+    },
+    {
+      "route": "F 119",
+      "description": "Okene -Ajaokuta Dual Carrigeway",
+      "length": 112.0
+    },
+    {
+      "route": "F 119",
+      "description": "Ondo S/B - Omuo - Kabba",
+      "length": 42.0
+    },
+    {
+      "route": "F 124",
+      "description": "Eggan -Kwara state Border",
+      "length": 10.0
+    },
+    {
+      "route": "A 233",
+      "description": "Shinfaku - Dekina -Ayangba",
+      "length": 81.0
+    },
+    {
+      "route": "A 123",
+      "description": "Kwara S/B - Egbe -Kabba - Lokoja",
+      "length": 195.0
+    },
+    {
+      "route": "A 2",
+      "description": "Edo State Border - Okene -Lokoja -FCT Border",
+      "length": 185.0
+    },
+    {
+      "route": "F 119",
+      "description": "Kabba -Okene",
+      "length": 34.0
+    }
+  ],
+  "KWARA": [
+    {
+      "route": "F 215",
+      "description": "Pategi-Isanlu Esa-Kogi S/B",
+      "length": 40.0
+    },
+    {
+      "route": "F 209",
+      "description": "Omuaran -Ekun Meje (Ekiti s/B",
+      "length": 15.0
+    },
+    {
+      "route": "F 205",
+      "description": "Ajase- Erinle-Osun S/B (Including Eastern & Western links to R45",
+      "length": 35.0
+    },
+    {
+      "route": "A202",
+      "description": "Kosubosu - Ilesha Oyo S/B",
+      "length": 88.0
+    },
+    {
+      "route": "F201",
+      "description": "Kaiama - Niger S/B",
+      "length": 36.0
+    },
+    {
+      "route": "F 124",
+      "description": "Share- Pategi - Kogi S/B",
+      "length": 188.0
+    },
+    {
+      "route": "A 123",
+      "description": "Ilorin- Share",
+      "length": 12.0
+    },
+    {
+      "route": "A 123",
+      "description": "Ilorin-Omuaan-Kogi S/B",
+      "length": 125.0
+    },
+    {
+      "route": "A 7",
+      "description": "Kaiama-Chikanda(benin Rep Border)",
+      "length": 125.0
+    },
+    {
+      "route": "A70",
+      "description": "Kishi-Kaiama",
+      "length": 64.0
+    },
+    {
+      "route": "A7",
+      "description": "Oyo S/B-Ilorin (Igbeti road)",
+      "length": 67.0
+    },
+    {
+      "route": "A1",
+      "description": "Oyo S/B -Ilorin-Jebba- Niger S/B",
+      "length": 154.0
+    }
+  ],
+  "LAGOS": [
+    {
+      "route": "F 269",
+      "description": "Apakun-Murtala Mohammed airport (dual)",
+      "length": 5.6
+    },
+    {
+      "route": "F 270",
+      "description": "New access road lighter terminal",
+      "length": 2.5
+    },
+    {
+      "route": "F 270",
+      "description": "Old access road from ikorodu round about to the lighter terminal (dual)",
+      "length": 7.0
+    },
+    {
+      "route": "F 271",
+      "description": "Obalende flyover",
+      "length": 0.7
+    },
+    {
+      "route": "F 272",
+      "description": "Obalende state house",
+      "length": 0.5
+    },
+    {
+      "route": "F 272",
+      "description": "Obalende Dodan- barracks flyover",
+      "length": 0.6
+    },
+    {
+      "route": "F 268",
+      "description": "Dockyard road-wharf dock yard",
+      "length": 1.9
+    },
+    {
+      "route": "F 265",
+      "description": "Kingsway/Osborne jct 22nd Avenue osborne Jct",
+      "length": 0.5
+    },
+    {
+      "route": "F 238",
+      "description": "Moloney roundabout national",
+      "length": 0.4
+    },
+    {
+      "route": "F 267",
+      "description": "Loops and ramp aling expressway",
+      "length": 4.2
+    },
+    {
+      "route": "F 265",
+      "description": "Liverpool roundabout-Ojota expressway",
+      "length": 63.6
+    },
+    {
+      "route": "F 265",
+      "description": "Kingsway road-Falomo bridge",
+      "length": 1.6
+    },
+    {
+      "route": "F 265",
+      "description": "Ikoyi road",
+      "length": 3.4
+    },
+    {
+      "route": "F 265",
+      "description": "Falomo roundabout",
+      "length": 0.2
+    },
+    {
+      "route": "F 265",
+      "description": "New Kingsway road",
+      "length": 9.6
+    },
+    {
+      "route": "F 264",
+      "description": "Isale eko high school marina/carter bridge junction",
+      "length": 1.8
+    },
+    {
+      "route": "F 264",
+      "description": "Carter bridge/3rd mainland junction Isale eko high school",
+      "length": 0.6
+    },
+    {
+      "route": "F 265",
+      "description": "Falomo flyover",
+      "length": 3.2
+    },
+    {
+      "route": "A 1",
+      "description": "Oyingbo - bus stop complex",
+      "length": 0.3
+    },
+    {
+      "route": "F 264",
+      "description": "New marina",
+      "length": 0.4
+    },
+    {
+      "route": "F 266",
+      "description": "Oyingbo - Yaba (Herbert Macaulay)(Dual)",
+      "length": 12.0
+    },
+    {
+      "route": "F 264",
+      "description": "2ND Federal secretariat ramp-3rd mainland bridge junction",
+      "length": 1.8
+    },
+    {
+      "route": "A 1",
+      "description": "Ilaro under pass",
+      "length": 1.0
+    },
+    {
+      "route": "A5",
+      "description": "Ikeja - Agege (Old road)",
+      "length": 7.5
+    },
+    {
+      "route": "A5",
+      "description": "Iddo service road",
+      "length": 1.0
+    },
+    {
+      "route": "A5",
+      "description": "Mosalasi -Ikeja (Dual)",
+      "length": 16.2
+    },
+    {
+      "route": "A1-2",
+      "description": "Costain ramp",
+      "length": 0.62
+    },
+    {
+      "route": "A 1-2",
+      "description": "Ijora ramp",
+      "length": 1.4
+    },
+    {
+      "route": "A 1-2",
+      "description": "Apongbon ramp",
+      "length": 0.62
+    },
+    {
+      "route": "A 1-2",
+      "description": "Apongbon-Alaka (Dual)",
+      "length": 8.4
+    },
+    {
+      "route": "A 1-1",
+      "description": "Malu road- kirikiri",
+      "length": 4.5
+    },
+    {
+      "route": "A1",
+      "description": "Costain roundabout wharf service rd 11",
+      "length": 3.0
+    },
+    {
+      "route": "A1",
+      "description": "Costain roundabout wharf service rd 1",
+      "length": 3.0
+    },
+    {
+      "route": "A5",
+      "description": "Yaba roundabout-Oyingbo",
+      "length": 4.3
+    },
+    {
+      "route": "F 101",
+      "description": "Itokin - Losi",
+      "length": 10.0
+    },
+    {
+      "route": "A1",
+      "description": "Yaba roundabout- Maryland (Dual)",
+      "length": 12.2
+    },
+    {
+      "route": "A1",
+      "description": "Ojota ramp",
+      "length": 1.0
+    },
+    {
+      "route": "A1",
+      "description": "Maryland-Ojota (Dual)",
+      "length": 6.0
+    },
+    {
+      "route": "F 264",
+      "description": "2nd Osborne -Federal Secretariat ramp",
+      "length": 0.8
+    },
+    {
+      "route": "A1",
+      "description": "Oyingbo-Idumota (Dual)",
+      "length": 6.0
+    },
+    {
+      "route": "F 268",
+      "description": "Wharf dockyard road-service road",
+      "length": 0.4
+    },
+    {
+      "route": "A1",
+      "description": "Yaba roundabout Edmund crescent junction (Dual)",
+      "length": 1.0
+    },
+    {
+      "route": "A1",
+      "description": "Idi-oro flyover (Dual)",
+      "length": 1.6
+    },
+    {
+      "route": "A1",
+      "description": "Spur road (dual)",
+      "length": 0.6
+    },
+    {
+      "route": "A 1",
+      "description": "Costain roundabout-Mosalashi (Dual)",
+      "length": 9.0
+    },
+    {
+      "route": "A1",
+      "description": "Lagos-Ikorodu (Dual)",
+      "length": 44.0
+    },
+    {
+      "route": "A 1",
+      "description": "Apapa road-costain roundabout",
+      "length": 11.2
+    },
+    {
+      "route": "F 264",
+      "description": "New marina roundabout",
+      "length": 0.4
+    },
+    {
+      "route": "F 264",
+      "description": "Obalende-Apongbpn flyover",
+      "length": 4.4
+    },
+    {
+      "route": "F 264",
+      "description": "Inner ring road complex",
+      "length": 12.25
+    },
+    {
+      "route": "A1",
+      "description": "Yaba-roundabout medical road",
+      "length": 0.5
+    },
+    {
+      "route": "A 151",
+      "description": "Ijora causeway-Iddo (dual)",
+      "length": 6.0
+    },
+    {
+      "route": "F 264",
+      "description": "New marina (Lagoon) Osborne",
+      "length": 2.5
+    },
+    {
+      "route": "F 264",
+      "description": "Ebutte Ero-CFAO Motors",
+      "length": 1.8
+    },
+    {
+      "route": "F 264",
+      "description": "Adeniji Adele flyover",
+      "length": 0.9
+    },
+    {
+      "route": "F 263",
+      "description": "Ahmadu Bello way Bar beach",
+      "length": 8.4
+    },
+    {
+      "route": "F 263",
+      "description": "Ahmadu Bello roundabout (Bonny camp)",
+      "length": 0.2
+    },
+    {
+      "route": "F262",
+      "description": "New cowry bridge",
+      "length": 0.7
+    },
+    {
+      "route": "F262",
+      "description": "Ahmadu bello flyover",
+      "length": 1.2
+    },
+    {
+      "route": "A152",
+      "description": "Ikeja Airport ramp",
+      "length": 0.81
+    },
+    {
+      "route": "F262",
+      "description": "Old marina",
+      "length": 1.5
+    },
+    {
+      "route": "F204",
+      "description": "Itoikin -Epe",
+      "length": 16.0
+    },
+    {
+      "route": "F101",
+      "description": "Itoikin-Ijebu Ode road",
+      "length": 25.0
+    },
+    {
+      "route": "F101",
+      "description": "Ikorodu -Itoikin",
+      "length": 32.0
+    },
+    {
+      "route": "F100",
+      "description": "Lagos -Badagry-Seme Border (Dual)",
+      "length": 180.0
+    },
+    {
+      "route": "A152",
+      "description": "Maryland- Ikeja (Dual)",
+      "length": 10.4
+    },
+    {
+      "route": "F264",
+      "description": "Ebutte ero roundabout - Eko Bridge Lagos",
+      "length": 0.6
+    }
+  ],
+  "NASARAWA": [
+    {
+      "route": "F125",
+      "description": "Wamba -Plateau S/B",
+      "length": 40.0
+    },
+    {
+      "route": "F241",
+      "description": "Wamba-Bokkos -Plateau S/B",
+      "length": 30.0
+    },
+    {
+      "route": "F124",
+      "description": "Plateau S/B -Bakin Kogi-Lafia",
+      "length": 55.0
+    },
+    {
+      "route": "F240",
+      "description": "Akwanga-Andalia-Kaduna S/B",
+      "length": 32.0
+    },
+    {
+      "route": "F238",
+      "description": "Nasarawa-Udegi-Loko-Benue S/B",
+      "length": 90.0
+    },
+    {
+      "route": "F238",
+      "description": "Nasarawa-Keffi-Gitate-Kaduna S/B",
+      "length": 107.0
+    },
+    {
+      "route": "F234",
+      "description": "Akwanga-Keffi FCT Border",
+      "length": 111.0
+    },
+    {
+      "route": "F124",
+      "description": "Doma -Rafin Gabas-Nasarawa",
+      "length": 82.0
+    },
+    {
+      "route": "F124",
+      "description": "Lafia-Doma",
+      "length": 25.0
+    },
+    {
+      "route": "F124",
+      "description": "Nasarawa-Toto-Abaji",
+      "length": 98.0
+    },
+    {
+      "route": "A3",
+      "description": "Kaduna S/B-Wamba-Akwanga-Lafia -Benue S/B",
+      "length": 173.0
+    },
+    {
+      "route": "F238",
+      "description": "Keffi-Nasarawa",
+      "length": 44.0
+    }
+  ],
+  "NIGER": [
+    {
+      "route": "F201",
+      "description": "Wawa-Kalama-Kwara S/B",
+      "length": 65.0
+    },
+    {
+      "route": "F124",
+      "description": "Katcha-Baro-FCT Border",
+      "length": 55.0
+    },
+    {
+      "route": "F210",
+      "description": "Wawa _Rofia",
+      "length": 150.0
+    },
+    {
+      "route": "F210",
+      "description": "Kainji-Dam-New bussa road-wawa (Formerly on kwara state)",
+      "length": 32.0
+    },
+    {
+      "route": "F124-2",
+      "description": "Airport road (Dual)",
+      "length": 7.2
+    },
+    {
+      "route": "F215",
+      "description": "Minna western Bye pass",
+      "length": 27.0
+    },
+    {
+      "route": "A1",
+      "description": "Jebba-Mokwa-kotongora",
+      "length": 186.0
+    },
+    {
+      "route": "A1",
+      "description": "Kotongora-Ibeto-kebbi S/B",
+      "length": 80.0
+    },
+    {
+      "route": "A2",
+      "description": "Zuba FCT-Kaduna S/B",
+      "length": 48.0
+    },
+    {
+      "route": "A10",
+      "description": "Bokani-Tegina",
+      "length": 115.0
+    },
+    {
+      "route": "F126",
+      "description": "Zungeru-Minna-Lambatta",
+      "length": 143.0
+    },
+    {
+      "route": "A125",
+      "description": "Kotongora -Tegina (Kaduna S/B)",
+      "length": 180.0
+    },
+    {
+      "route": "F128",
+      "description": "Rofia-Swate-Segbana(Benin Republic border)",
+      "length": 121.0
+    },
+    {
+      "route": "F126-1",
+      "description": "Minna-Shiroro Dam road",
+      "length": 60.0
+    },
+    {
+      "route": "F128",
+      "description": "Rijau-Kebbi State border through Zonte",
+      "length": 50.0
+    },
+    {
+      "route": "F211",
+      "description": "Mokwa-Kainji Dam road",
+      "length": 90.0
+    },
+    {
+      "route": "F212",
+      "description": "Ibeto-Auna-Newarrah-Kebbi S/B",
+      "length": 75.0
+    },
+    {
+      "route": "F214",
+      "description": "Kontagora-Rijau-Kebbi S/B",
+      "length": 113.0
+    },
+    {
+      "route": "F215",
+      "description": "Tegina-Zungeru-Bida-Sacci",
+      "length": 150.0
+    },
+    {
+      "route": "F221",
+      "description": "Agaie -Katoba",
+      "length": 30.0
+    },
+    {
+      "route": "A124",
+      "description": "Jct.with 20 (A1)-Bida-Lapal-Lambata JCt with 50 (A2)",
+      "length": 289.0
+    }
+  ],
+  "OGUN": [
+    {
+      "route": "F105",
+      "description": "Owode-Papalanto",
+      "length": 48.8
+    },
+    {
+      "route": "E1",
+      "description": "Isheri (Lagos S/B) -Ogunmakin Oyo S/B (Lagos-Ibd Expressway)",
+      "length": 166.0
+    },
+    {
+      "route": "A121",
+      "description": "J4-Ose-Iwopin",
+      "length": 43.0
+    },
+    {
+      "route": "F102",
+      "description": "Abeokuta -Kobape-Shagamu",
+      "length": 53.0
+    },
+    {
+      "route": "A5",
+      "description": "Abeokuta _Ilaro (Lagos S/B)",
+      "length": 64.0
+    },
+    {
+      "route": "F204",
+      "description": "Itoikin(Lagos S/B)_ijebu Ode-Mamu (OyoS/B)",
+      "length": 75.0
+    },
+    {
+      "route": "F200",
+      "description": "Ishaga-Igbo Ora (section 11 of the proposed badagry sokoto road)",
+      "length": 80.0
+    },
+    {
+      "route": "F105",
+      "description": "Papalanto-Ilaro (with Eggua spur)",
+      "length": 83.0
+    },
+    {
+      "route": "F102",
+      "description": "Abeokuta-Olorunda-Imeko",
+      "length": 70.0
+    },
+    {
+      "route": "A1",
+      "description": "Lagos S/B-Shagamu Iperu-Ogunmakin (Oyo S/B)",
+      "length": 75.0
+    },
+    {
+      "route": "A5",
+      "description": "Abeokuta-Bakatari (Oyo S/B)",
+      "length": 54.0
+    },
+    {
+      "route": "A121",
+      "description": "Shagamu(Interchange)-Ijebu Ode-Ajegbandele (Ondo State border)(dual -carriage)",
+      "length": 196.0
+    },
+    {
+      "route": "A5",
+      "description": "Sango -Ota-Idiroko",
+      "length": 64.0
+    }
+  ],
+  "ONDO": [
+    {
+      "route": "F209",
+      "description": "Okitipupa -Ore-Ondo -Akure -Ekiti S/B",
+      "length": 149.4
+    },
+    {
+      "route": "A121",
+      "description": "Ogun S/B-Ajengbandele-Ofosu-Edo S/B (dual)",
+      "length": 172.0
+    },
+    {
+      "route": "F115",
+      "description": "Ifon-Osse River Bridge (Edo S/B)",
+      "length": 5.0
+    },
+    {
+      "route": "F207",
+      "description": "Ondo -Okeigbo (Osun S/B)",
+      "length": 16.0
+    },
+    {
+      "route": "F208",
+      "description": "Itanla-Ipetu- Ijesha-Osun S/B",
+      "length": 26.0
+    },
+    {
+      "route": "F114",
+      "description": "Sobe-Okeluse-Ogbese River (Edo S/B)",
+      "length": 32.0
+    },
+    {
+      "route": "F215",
+      "description": "Owo-Ikare-Arigidi (Ekiti S/B)",
+      "length": 68.0
+    },
+    {
+      "route": "F220",
+      "description": "Ipelle-Ifira-Ayere",
+      "length": 83.0
+    },
+    {
+      "route": "F117",
+      "description": "Ibillo(EdoS/B) - Ikare-Irun Ekiti S/B",
+      "length": 47.0
+    },
+    {
+      "route": "F122",
+      "description": "Osun S/B -Akure -Edo S/B",
+      "length": 126.0
+    }
+  ],
+  "OSUN": [
+    {
+      "route": "A122",
+      "description": "Ife-Asejire (dual)",
+      "length": 94.0
+    },
+    {
+      "route": "F117",
+      "description": "Ilesa-Itawure- Ekiti S/B",
+      "length": 32.0
+    },
+    {
+      "route": "F105",
+      "description": "Akoda - Ede _Oshogbo",
+      "length": 23.0
+    },
+    {
+      "route": "F205",
+      "description": "Oshogbo-Ota Efun-Ikirun (old road)",
+      "length": 20.0
+    },
+    {
+      "route": "F117",
+      "description": "Erinmo-Efon Alaaye (Including Iwaraju spur)",
+      "length": 26.0
+    },
+    {
+      "route": "F208",
+      "description": "Ipetu Ijesa junction-Apoti -Ondo state border",
+      "length": 14.5
+    },
+    {
+      "route": "F207",
+      "description": "IfeIfetedo-Ondo state border",
+      "length": 45.0
+    },
+    {
+      "route": "A122",
+      "description": "Osu junction-Ilesha IBL Junction",
+      "length": 20.0
+    },
+    {
+      "route": "A122",
+      "description": "Ife-Owena S/B",
+      "length": 78.0
+    },
+    {
+      "route": "F118",
+      "description": "Gbongan -Iwo-Oyo state Border",
+      "length": 46.0
+    },
+    {
+      "route": "F118-1",
+      "description": "Sekona-Gbongan",
+      "length": 22.0
+    },
+    {
+      "route": "F205",
+      "description": "Oshogbo -Okuku-Kwara S/B",
+      "length": 40.0
+    },
+    {
+      "route": "F205",
+      "description": "Ife-Sekona-Oshogbo",
+      "length": 44.0
+    },
+    {
+      "route": "F206",
+      "description": "Ilesha-osogbo-Ilobu-Oyo S/B",
+      "length": 52.0
+    },
+    {
+      "route": "F205",
+      "description": "Ife-Araromi-Ogun S/B",
+      "length": 65.0
+    }
+  ],
+  "OYO": [
+    {
+      "route": "F200",
+      "description": "OgunS/B- Maya -Ago Are",
+      "length": 105.0
+    },
+    {
+      "route": "E1",
+      "description": "Ogun S/B- Ibadan Toll plaza-Ojoo (dual)",
+      "length": 86.0
+    },
+    {
+      "route": "A7",
+      "description": "Kisi-Igheti-Kwara S/B",
+      "length": 54.0
+    },
+    {
+      "route": "F202",
+      "description": "Iseyin-Ago Are- Mosi",
+      "length": 167.0
+    },
+    {
+      "route": "F206",
+      "description": "Ogbomosho-Dogo-Ighetti",
+      "length": 82.0
+    },
+    {
+      "route": "F204",
+      "description": "Odo Ona(Ibadan)-Idi Ayunre-Mamu (Ogun S/B)",
+      "length": 23.0
+    },
+    {
+      "route": "A1",
+      "description": "Ogun S/B Ibadan (molete)- Oyo-Ogbomosho-Ashileke-Ote-kwara S/B",
+      "length": 159.0
+    },
+    {
+      "route": "F200",
+      "description": "Maya-Iseyin (Old)",
+      "length": 45.0
+    },
+    {
+      "route": "F118",
+      "description": "Iwo-Oyo-Iseyin-Wasimi (Benin Rep Border)",
+      "length": 175.0
+    },
+    {
+      "route": "F206",
+      "description": "Ogbomosho-Osun S/B",
+      "length": 41.2
+    },
+    {
+      "route": "A5",
+      "description": "Dugbe(Ibadan)-Bakatari (Ogun S/B)",
+      "length": 23.0
+    },
+    {
+      "route": "F202",
+      "description": "Ago-Are Shaki- Ibadan (Kwara S/B)",
+      "length": 46.0
+    },
+    {
+      "route": "A122",
+      "description": "Mokola-Agodi known as Queen Elizabeth 11 road in Ibd",
+      "length": 3.3
+    },
+    {
+      "route": "A122",
+      "description": "Agodi(Ibadan) Asejire (Osun S/B) Dual",
+      "length": 51.0
+    }
+  ],
+  "PLATEAU": [
+    {
+      "route": "F247",
+      "description": "Bauchi S/B-Dawaki -langtang",
+      "length": 63.0
+    },
+    {
+      "route": "F242",
+      "description": "Kuru roundabout-Helpang-panyan",
+      "length": 62.0
+    },
+    {
+      "route": "F242",
+      "description": "panyan-shendam",
+      "length": 86.0
+    },
+    {
+      "route": "F241",
+      "description": "panyanpanyan-bokkos-Nasarawa S/B",
+      "length": 68.0
+    },
+    {
+      "route": "F245",
+      "description": "85 (A.236)Jct- Bauchi state border",
+      "length": 8.0
+    },
+    {
+      "route": "F242",
+      "description": "Shendam-Yelwa-Taraba state",
+      "length": 76.0
+    },
+    {
+      "route": "F241",
+      "description": "panyan-pankshin - 32(F.247) jct",
+      "length": 54.0
+    },
+    {
+      "route": "F127",
+      "description": "vom-kaduna state border(manchok)",
+      "length": 47.5
+    },
+    {
+      "route": "F127",
+      "description": "zawang/bukuru jct-vom-christian hospital",
+      "length": 20.5
+    },
+    {
+      "route": "F125",
+      "description": "bashir-taraba state border",
+      "length": 50.0
+    },
+    {
+      "route": "F125",
+      "description": "Wuse-Bashir",
+      "length": 60.0
+    },
+    {
+      "route": "F125",
+      "description": "Langtang- Wuse",
+      "length": 26.0
+    },
+    {
+      "route": "F125",
+      "description": "Shendam-Lalin-Langtang",
+      "length": 40.0
+    },
+    {
+      "route": "F125",
+      "description": "Nasarawa S/B-Shendam on Wamba road",
+      "length": 40.0
+    },
+    {
+      "route": "F124",
+      "description": "Shendam-Namu-Nasarawa S/B",
+      "length": 68.0
+    },
+    {
+      "route": "A236",
+      "description": "Jos-Kaduna state border (Jengere)",
+      "length": 59.0
+    },
+    {
+      "route": "A3",
+      "description": "Lafia-Benue state border",
+      "length": 46.0
+    },
+    {
+      "route": "A3",
+      "description": "Jos-Bye pass (ring road)",
+      "length": 20.0
+    },
+    {
+      "route": "A3",
+      "description": "Bauchi state border -Jos kuru-Kaduna state border",
+      "length": 85.0
+    }
+  ],
+  "RIVERS": [
+    {
+      "route": "F261",
+      "description": "Rumukwurushi-chokocho road",
+      "length": 17.0
+    },
+    {
+      "route": "F103",
+      "description": "Bayelsa S/B- Rumuekpe-Rumukwurushi-Onne Jct Okpuoko",
+      "length": 165.0
+    },
+    {
+      "route": "nan",
+      "description": "Emuoha-Degema Port",
+      "length": 18.0
+    },
+    {
+      "route": "F230",
+      "description": "Bean-Bonny- Bodo",
+      "length": 82.2
+    },
+    {
+      "route": "F229",
+      "description": "Port Harcourt-Elele-Umanelu",
+      "length": 72.0
+    },
+    {
+      "route": "nan",
+      "description": "Ndoni link road",
+      "length": 17.8
+    },
+    {
+      "route": "nan",
+      "description": "Ebubu -Onne Port",
+      "length": 9.0
+    },
+    {
+      "route": "F103-1",
+      "description": "Elelenwo _okrika",
+      "length": 18.0
+    },
+    {
+      "route": "F231",
+      "description": "Igwuruta- Okpalla road",
+      "length": 54.0
+    },
+    {
+      "route": "A3",
+      "description": "Old port harcourt -Abia road",
+      "length": 8.0
+    },
+    {
+      "route": "F228",
+      "description": "Buguma-Ahoada-Okwuzi",
+      "length": 116.0
+    },
+    {
+      "route": "A3",
+      "description": "Port Harcourt-abia S/B (Dual)",
+      "length": 80.0
+    }
+  ],
+  "nan": [
+    {
+      "route": "nan",
+      "description": "nan",
+      "length": 657.0
+    },
+    {
+      "route": "nan",
+      "description": "nan",
+      "length": NaN
+    },
+    {
+      "route": "nan",
+      "description": "nan",
+      "length": 582.0
+    },
+    {
+      "route": "nan",
+      "description": "nan",
+      "length": NaN
+    },
+    {
+      "route": "nan",
+      "description": "nan",
+      "length": 1624.0
+    },
+    {
+      "route": "nan",
+      "description": "nan",
+      "length": NaN
+    },
+    {
+      "route": "nan",
+      "description": "nan",
+      "length": 877.4
+    },
+    {
+      "route": "nan",
+      "description": "nan",
+      "length": NaN
+    },
+    {
+      "route": "nan",
+      "description": "nan",
+      "length": 1035.0
+    },
+    {
+      "route": "nan",
+      "description": "nan",
+      "length": NaN
+    },
+    {
+      "route": "nan",
+      "description": "nan",
+      "length": 33633.8
+    }
+  ],
+  "SOKOTO": [
+    {
+      "route": "F 218",
+      "description": "Sabon Birnin-Isa- Zamfara S/B",
+      "length": 66.0
+    },
+    {
+      "route": "nan",
+      "description": "Sokoto -Ilela-Niger Reb border",
+      "length": 86.0
+    },
+    {
+      "route": "A 1",
+      "description": "Sokoto-Shagari -Kebbi S/B",
+      "length": 95.0
+    },
+    {
+      "route": "F 132",
+      "description": "Kebbi S/B-Kebbe-Zamfara S/B",
+      "length": 40.0
+    },
+    {
+      "route": "A 126",
+      "description": "Sokoto-Dange-Zamfara S/B",
+      "length": 70.0
+    },
+    {
+      "route": "F 213",
+      "description": "Jabo-Kajiji-Zamfara S/B",
+      "length": 30.0
+    },
+    {
+      "route": "F 138",
+      "description": "Sokoto-Goronyo-Dam Site-Sabon Birni",
+      "length": 155.0
+    },
+    {
+      "route": "F 133",
+      "description": "Jaredi-Kebbi S/B",
+      "length": 40.0
+    }
+  ],
+  "TARABA": [
+    {
+      "route": "F 123",
+      "description": "Bali-Jamatari",
+      "length": 45.0
+    },
+    {
+      "route": "F 125",
+      "description": "Mutum Daya-Muri-Plateau S/B",
+      "length": 60.0
+    },
+    {
+      "route": "A 8",
+      "description": "Jamatari -Keme",
+      "length": 18.0
+    },
+    {
+      "route": "F 122",
+      "description": "Gembu-Bang-Cameroon border",
+      "length": 30.0
+    },
+    {
+      "route": "F 250",
+      "description": "Mutum Daya-Filiya",
+      "length": 45.0
+    },
+    {
+      "route": "F 250",
+      "description": "Lankaviri-Lau-Mutum Daya",
+      "length": 76.0
+    },
+    {
+      "route": "F 242",
+      "description": "Wukari-Ibi-Plateau S/B",
+      "length": 62.0
+    },
+    {
+      "route": "F 125",
+      "description": "Muri-Kirim-Lamido",
+      "length": 33.0
+    },
+    {
+      "route": "A 12",
+      "description": "Bali-Sabongida",
+      "length": 101.0
+    },
+    {
+      "route": "A 12",
+      "description": "Jalingo-Garba chede-Bali",
+      "length": 139.0
+    },
+    {
+      "route": "F 122",
+      "description": "Gembu-Sabongida-Rafin Kada",
+      "length": 238.0
+    },
+    {
+      "route": "F 242",
+      "description": "Takum-Wukari",
+      "length": 78.0
+    },
+    {
+      "route": "A 8",
+      "description": "Jamtari-Mayo-Seibe-Maisamari-Nguroje-Gembu",
+      "length": 222.0
+    },
+    {
+      "route": "A 4",
+      "description": "Mayo-Lope-Jalingo Jct",
+      "length": 53.0
+    },
+    {
+      "route": "A 4",
+      "description": "Jalingo township spur",
+      "length": 10.0
+    },
+    {
+      "route": "A 4",
+      "description": "Jalingo Jct-Mutum Biu-Tella-Wukari Benue S/B",
+      "length": 226.0
+    },
+    {
+      "route": "A 4-3",
+      "description": "Takum Bissaula",
+      "length": 70.0
+    },
+    {
+      "route": "A 12",
+      "description": "Sabongida-Takum-Benue S/B",
+      "length": 73.0
+    },
+    {
+      "route": "A 13",
+      "description": "Kunini Junction-Zing-Adamawa S/B",
+      "length": 45.0
+    }
+  ],
+  "YOBE": [
+    {
+      "route": "F 251",
+      "description": "Potiskum-Fika-Ngalda Bridge Gombe S/B",
+      "length": 83.0
+    },
+    {
+      "route": "F 128-3",
+      "description": "Geidam-kanamma-Niger Rep International border",
+      "length": 40.0
+    },
+    {
+      "route": "F 128-2",
+      "description": "Nguru-Machina road",
+      "length": 57.0
+    },
+    {
+      "route": "F 253",
+      "description": "Damaturu-Buni Yadi-Magza Borno S/B",
+      "length": 80.0
+    },
+    {
+      "route": "F 253",
+      "description": "Damaturu-Bayamari Road",
+      "length": 130.0
+    },
+    {
+      "route": "nan",
+      "description": "Gashua-Yusufari",
+      "length": 30.4
+    },
+    {
+      "route": "F 128",
+      "description": "Geidam-Borno S/B",
+      "length": 55.0
+    },
+    {
+      "route": "F 128",
+      "description": "Gashua-Bayamari-Geidam",
+      "length": 107.0
+    },
+    {
+      "route": "F 130",
+      "description": "Potiskum-Lailai (Bauchi S/B)",
+      "length": 16.0
+    },
+    {
+      "route": "F 128",
+      "description": "Nguru- Bombori (Jigawa S/B)",
+      "length": 7.0
+    },
+    {
+      "route": "F 128",
+      "description": "Nguru-Gashua road",
+      "length": 65.0
+    },
+    {
+      "route": "A 3",
+      "description": "Borno state border-Damaturu Potiskum-Bauchi state Border km 102km-274",
+      "length": 170.0
+    },
+    {
+      "route": "F 131",
+      "description": "Potiskum-kukuri Bauchi S/B",
+      "length": 37.0
+    }
+  ],
+  "ZAMFARA": [
+    {
+      "route": "F 217",
+      "description": "Anka-Dan Gulbi-Kaduna S/B",
+      "length": 158.0
+    },
+    {
+      "route": "F 214",
+      "description": "Daki-Takwas-Kebbi S/B",
+      "length": 25.0
+    },
+    {
+      "route": "A 126",
+      "description": "Sokoto S/B -Mafara-Tsafe-Katsina S/B",
+      "length": 273.0
+    },
+    {
+      "route": "F 218",
+      "description": "Kaura Namoda -shikafi-Sokoto S/B",
+      "length": 82.0
+    },
+    {
+      "route": "F 218",
+      "description": "Gusau-Kaura Namoda",
+      "length": 58.0
+    },
+    {
+      "route": "F 137",
+      "description": "Kaura Namoda-Zurni-Katsina S/B",
+      "length": 73.0
+    },
+    {
+      "route": "F132",
+      "description": "Mainchi-Daki Takwas-Sokoto S/B",
+      "length": 216.0
+    },
+    {
+      "route": "F128",
+      "description": "Kebbi S/B- Dan Gulbi-Tsafe-katsina S/B",
+      "length": 150.0
+    }
+  ]
+}
