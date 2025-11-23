@@ -6,51 +6,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
-    body { margin: 0; padding: 0; }
-    #map { height: 90vh; width: 100%; }
+    body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+
+    #mapTitle {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 8px;
+    }
+
     #controls {
-      padding: 10px;
+      padding: 8px 10px;
       background: #f0f0f0;
       text-align: center;
-      font-family: Arial, sans-serif;
+      font-size: 14px;
     }
-    #mapTitle {
-      position: absolute;
-      top: 40px; left: 50%;
-      transform: translateX(-50%);
-      z-index: 1000;
-      background: rgba(255,255,255,0.8);
-      padding: 8px 20px;
-      border-radius: 5px;
-      font-size: 20px;
+
+    #main {
+      display: flex;
+      height: calc(100vh - 90px); /* title + controls */
+    }
+
+    #map {
+      flex: 1;
+    }
+
+    #infoPanel {
+      width: 340px;
+      max-width: 30%;
+      border-left: 1px solid #ccc;
+      padding: 10px 12px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      background: #fff;
+    }
+
+    #infoPanel h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    #infoPanel h3 {
+      margin: 6px 0;
+      font-size: 16px;
+    }
+
+    #infoContent {
+      font-size: 13px;
+      line-height: 1.4;
+      white-space: normal;
+      word-wrap: break-word;
+    }
+
+    #infoPanel table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    #infoPanel th,
+    #infoPanel td {
+      border-bottom: 1px solid #ddd;
+      padding: 4px 4px;
+      vertical-align: top;
+    }
+
+    #infoPanel th {
+      background: #f5f5f5;
+    }
+
+    #infoPanel td:nth-child(2) {
+      white-space: normal;
+      word-wrap: break-word;
+    }
+
+    .route-label {
+      pointer-events: none;
+      text-align: center;
+      color: lightgreen;
+      font-size: 11px;
       font-weight: bold;
+      text-shadow: 1px 1px 2px #000;
+      white-space: nowrap;
     }
-    .route-label { pointer-events: none; text-align: center; }
 
-    /* Popup content */
     .leaflet-popup-content {
-        font-size: 12px !important;
-        line-height: 1.3em;
-        color: #fff;
-        text-shadow: 1px 1px 2px #000;
-        font-weight: bold;
-    }
-    .leaflet-popup-content b { color: #e0e0e0; }
-
-    /* Transparent Popup Background */
-    .leaflet-popup-content-wrapper,
-    .leaflet-popup-tip {
-        background: rgba(0,0,0,0.2) !important;
-        backdrop-filter: blur(3px);
-        border: 1px solid rgba(255,255,255,0.3);
-        box-shadow: none !important;
-        max-width: 180px !important;   /* smaller popup */
-        padding: 6px !important;
-    }
-
-    /* Move popup to the right */
-    .leaflet-popup {
-        margin-left: 80px !important;  /* shift popup sideways */
+      font-size: 12px !important;
+      line-height: 1.3em;
     }
   </style>
 </head>
@@ -59,47 +101,56 @@
 <div id="mapTitle">FERMA INVENTORY MAP</div>
 
 <div id="controls">
-    <label><b>Select State:</b></label>
-    <select id="stateList"><option value="">-- Select State --</option></select>
+  <label><b>Select State:</b></label>
+  <select id="stateList">
+    <option value="">-- Select State --</option>
+  </select>
 
-    &nbsp;&nbsp;
-    <label><b>Select Road Type:</b></label>
-    <select id="roadType">
-      <option value="">-- Select --</option>
-      <option value="Aroads">A Roads</option>
-      <option value="Froads">F Roads</option>
-      <option value="All">All Roads</option>
-    </select>
+  &nbsp;&nbsp;
+  <label><b>Select Road Type:</b></label>
+  <select id="roadType">
+    <option value="">-- Select --</option>
+    <option value="Aroads">A Roads</option>
+    <option value="Froads">F Roads</option>
+    <option value="All">All Roads</option>
+  </select>
 
-    &nbsp;&nbsp;
-    <label><b>Select Route:</b></label>
-    <select id="roadList" disabled>
-      <option value="">-- Select Route --</option>
-    </select>
+  &nbsp;&nbsp;
+  <label><b>Select Route:</b></label>
+  <select id="roadList" disabled>
+    <option value="">-- Select Route --</option>
+  </select>
 
-    &nbsp;&nbsp;
-    <label><b>Select 25 km Segment:</b></label>
-    <select id="segmentList" disabled>
-      <option value="">-- Select Segment --</option>
-    </select>
+  &nbsp;&nbsp;
+  <label><b>Select 25 km Segment:</b></label>
+  <select id="segmentList" disabled>
+    <option value="">-- Select Segment --</option>
+  </select>
 </div>
 
-<div id="map"></div>
+<div id="main">
+  <div id="map"></div>
+  <div id="infoPanel">
+    <h2>ROUTE INFORMATION</h2>
+    <div id="infoContent">
+      <em>Select a state or route.</em>
+    </div>
+  </div>
+</div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-  // =====================================================================
-  // 1️⃣ INITIALIZE MAP
-  // =====================================================================
-  const nigeriaBounds = L.latLngBounds([4.2, 2.7], [13.9, 14.7]);
-  const map = L.map("map").fitBounds(nigeriaBounds);
-  map.setMaxBounds(nigeriaBounds);
+// =====================================================================
+// 1. INITIALISE MAP
+// =====================================================================
+const nigeriaBounds = L.latLngBounds([4.2, 2.7], [13.9, 14.7]);
+const map = L.map("map").fitBounds(nigeriaBounds);
+map.setMaxBounds(nigeriaBounds);
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 18,
-    attribution: "&copy; OpenStreetMap contributors"
-  }).addTo(map);
- // ========================
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 18,
+  attribution: "&copy; OpenStreetMap contributors"
+}).addTo(map); // ========================
     // SAMPLE DATA
     // ========================
    const Froads = {
@@ -1393,290 +1444,447 @@ const FRoads25km = {
 ]
 }
 
- // ===================================
-  // STYLE & HIGHLIGHT FUNCTIONS
-  // ===================================
-  function styleRoad(type) {
-    return { color: type === "Aroads" ? "blue" : "red", weight: 2 };
+// =====================================================================
+// 3. STYLE & HIGHLIGHT HELPERS
+// =====================================================================
+function styleRoad(type) {
+  return { color: type === "Aroads" ? "blue" : "red", weight: 2 };
+}
+
+let highlightedLayer = null;
+let activeSegmentLayer = null;
+
+function clearHighlights() {
+  if (highlightedLayer && highlightedLayer.setStyle) {
+    const props = highlightedLayer.feature.properties || {};
+    const isA = (props.ROUTE || props.Route || "").toString().toUpperCase().startsWith("A");
+    highlightedLayer.setStyle(styleRoad(isA ? "Aroads" : "Froads"));
+  }
+  if (activeSegmentLayer) {
+    map.removeLayer(activeSegmentLayer);
+    activeSegmentLayer = null;
+  }
+}
+
+// =====================================================================
+// 4. INFO PANEL HELPERS
+// =====================================================================
+let aroadsInfo = {};
+let froadsInfo = {};
+let stateInfo = {};
+
+const infoDiv = document.getElementById("infoContent");
+
+function setDefaultInfo() {
+  infoDiv.innerHTML = "<em>Select a state or route.</em>";
+}
+
+function updateInfoForRoute(routeName, roadType) {
+  const infoSource = roadType === "Aroads" ? aroadsInfo : froadsInfo;
+  const data = infoSource[routeName];
+
+  if (!data) {
+    infoDiv.innerHTML = `
+      <h3>${routeName}</h3>
+      <p>No extra information found in the Road Information table.</p>
+    `;
+    return;
   }
 
-  let highlightedLayer = null;
-  let activeSegmentLayer = null;
+  const desc = data.description || "N/A";
+  const lengthText = data.length != null ? `${data.length.toLocaleString(undefined,{maximumFractionDigits:3})} km` : "N/A";
+  const alignText = data.alignment || "N/A";
 
-  function clearHighlights() {
-    if (highlightedLayer && highlightedLayer.setStyle) {
-      const prevType = highlightedLayer.feature.properties.ROUTE?.startsWith("A") ? "Aroads" : "Froads";
-      highlightedLayer.setStyle(styleRoad(prevType));
-    }
-    if (activeSegmentLayer) {
-      map.removeLayer(activeSegmentLayer);
-      activeSegmentLayer = null;
-    }
+  infoDiv.innerHTML = `
+    <h3>${routeName}</h3>
+    <p>${desc}</p>
+    <p>
+      <b>Length:</b> ${lengthText}<br>
+      <b>Alignment:</b> ${alignText}
+    </p>
+  `;
+}
+
+function updateInfoForState(stateName) {
+  if (!stateInfo) {
+    infoDiv.innerHTML = `<h3>${stateName}</h3><p>No state information loaded.</p>`;
+    return;
   }
 
-  function highlightLayer(layer) {
-    clearHighlights();
-    layer.setStyle({ color: "green", weight: 5 });
-    highlightedLayer = layer;
-    map.fitBounds(layer.getBounds(), { animate: true, padding: [100, 100] });
+  const key = stateName.toUpperCase();
+  const rows = stateInfo[key];
 
-    const p = layer.feature.properties;
-    const route = p.ROUTE || p.Route || "Unknown";
-    const state = p.States || p.State || "Unknown";
-    const len = p.Length || p.len || 0;
-
-    layer.bindPopup(
-      `<b>Route:</b> ${route}<br><b>State:</b> ${state}<br><b>Length:</b> ${len.toFixed(2)} km`
-    ).openPopup();
+  if (!rows || !rows.length) {
+    infoDiv.innerHTML = `<h3>${stateName}</h3><p>No extra information found for this state.</p>`;
+    return;
   }
 
-  // ===================================
-  // ADD LABELS
-  // ===================================
-  function addRouteLabels(geojsonData) {
-    const labelLayer = L.layerGroup();
-    geojsonData.features.forEach(feature => {
-      const routeName = feature.properties.ROUTE || feature.properties.Route;
-      if (!routeName) return;
-      const coords = feature.geometry.coordinates.flat(1);
-      if (!coords.length) return;
-      const midIndex = Math.floor(coords.length / 2);
-      const [lng, lat] = coords[midIndex];
-      const label = L.divIcon({
-        className: "route-label",
-        html: `<div style="color: lightgreen; font-size:11px; font-weight:bold; text-shadow:1px 1px 2px #000;">${routeName}</div>`,
-        iconSize: [40, 15]
-      });
-      L.marker([lat, lng], { icon: label, interactive: false }).addTo(labelLayer);
-    });
-    return labelLayer;
-  }
-
-  // ===================================
-  // ROAD LAYERS
-  // ===================================
-  const AroadsLayer = L.geoJSON(Aroads, {
-    style: styleRoad("Aroads"),
-    onEachFeature: (f, l) => l.on("click", () => highlightLayer(l))
+  let rowsHtml = "";
+  rows.forEach(r => {
+    const len = r.length != null ? `${r.length} km` : "N/A";
+    rowsHtml += `
+      <tr>
+        <td>${r.route}</td>
+        <td>${r.description}</td>
+        <td style="text-align:right;">${len}</td>
+      </tr>`;
   });
-  const FroadsLayer = L.geoJSON(Froads, {
-    style: styleRoad("Froads"),
-    onEachFeature: (f, l) => l.on("click", () => highlightLayer(l))
-  });
 
-  const AroadsLabels = addRouteLabels(Aroads);
-  const FroadsLabels = addRouteLabels(Froads);
+  infoDiv.innerHTML = `
+    <h3>${stateName}</h3>
+    <table>
+      <thead>
+        <tr><th>Route</th><th>Description</th><th>Length</th></tr>
+      </thead>
+      <tbody>${rowsHtml}</tbody>
+    </table>
+  `;
+}
 
-  const AroadsGroup = L.layerGroup([AroadsLayer, AroadsLabels]);
-  const FroadsGroup = L.layerGroup([FroadsLayer, FroadsLabels]);
-  const allRoadsLayer = L.layerGroup([AroadsLayer, FroadsLayer, AroadsLabels, FroadsLabels]).addTo(map);
-  let activeRoadLayer = allRoadsLayer;
+// =====================================================================
+// 5. ROUTE LABELS (SHOW WITHIN STATE WHEN STATE SELECTED)
+// =====================================================================
+let routeLabelsLayer = null;
 
-  // ===================================
-  // STATE LAYER (using States.geojson.txt)
-  // ===================================
-  let statesLayer, stateFeatures = [], highlightedStateLayer = null;
-  const stateNameField = "statename"; // from your file
+function addRouteLabelsWithinState(geojsonData, selectedState) {
+  if (routeLabelsLayer) {
+    map.removeLayer(routeLabelsLayer);
+    routeLabelsLayer = null;
+  }
+  const labelLayer = L.layerGroup();
 
-  fetch("https://raw.githubusercontent.com/femifast/F-and-A-Roads/main/States.geojson.txt")
-    .then(res => res.json())
-    .then(data => {
-      // Filter out empty / null statename features
-      stateFeatures = data.features.filter(f =>
-        f.properties &&
-        f.properties[stateNameField] &&
-        f.geometry &&
-        f.geometry.coordinates &&
-        f.geometry.coordinates.length
-      );
+  const stateLower = selectedState.toLowerCase();
+  geojsonData.features.forEach(feature => {
+    const states = feature.properties.States?.toLowerCase?.() || "";
+    if (!states.includes(stateLower)) return;
 
-      statesLayer = L.geoJSON(stateFeatures, {
-        style: { color: "gray", weight: 2, fillOpacity: 0.1 }
-      }).addTo(map);
+    const routeName = feature.properties.ROUTE || feature.properties.Route;
+    if (!routeName) return;
 
-      const stateList = document.getElementById("stateList");
-      stateList.innerHTML = `<option value="">-- Select State --</option>`;
+    let coords = [];
+    if (feature.geometry.type === "MultiLineString") {
+      coords = feature.geometry.coordinates.flat(1);
+    } else if (feature.geometry.type === "LineString") {
+      coords = feature.geometry.coordinates;
+    }
+    if (!coords.length) return;
 
-      stateFeatures.forEach(f => {
-        const name = f.properties[stateNameField];
-        const opt = document.createElement("option");
-        opt.value = name;
-        opt.textContent = name;
-        stateList.appendChild(opt);
-      });
-    })
-    .catch(err => {
-      console.error("Error fetching state geojson:", err);
+    const midIndex = Math.floor(coords.length / 2);
+    const [lng, lat] = coords[midIndex];
+
+    const label = L.divIcon({
+      className: "route-label",
+      html: `<div>${routeName}</div>`,
+      iconSize: [40, 15]
     });
 
-  function selectState(stateName) {
+    L.marker([lat, lng], { icon: label, interactive: false }).addTo(labelLayer);
+  });
+
+  routeLabelsLayer = labelLayer.addTo(map);
+}
+
+// =====================================================================
+// 6. LAYERS
+// =====================================================================
+const AroadsLayer = L.geoJSON(Aroads, {
+  style: styleRoad("Aroads"),
+  onEachFeature: (f, l) => {
+    l.on("click", () => {
+      clearHighlights();
+      highlightedLayer = l;
+      l.setStyle({ color: "green", weight: 5 });
+      map.fitBounds(l.getBounds(), { padding: [80, 80] });
+
+      // Update info from road click
+      const rt = (f.properties.ROUTE || f.properties.Route || "").toString();
+      const rtType = rt.toUpperCase().startsWith("A") || rt.toUpperCase().startsWith("E") ? "Aroads" : "Froads";
+      updateInfoForRoute(rt, rtType);
+    });
+  }
+});
+
+const FroadsLayer = L.geoJSON(Froads, {
+  style: styleRoad("Froads"),
+  onEachFeature: (f, l) => {
+    l.on("click", () => {
+      clearHighlights();
+      highlightedLayer = l;
+      l.setStyle({ color: "green", weight: 5 });
+      map.fitBounds(l.getBounds(), { padding: [80, 80] });
+
+      const rt = (f.properties.ROUTE || f.properties.Route || "").toString();
+      updateInfoForRoute(rt, "Froads");
+    });
+  }
+});
+
+const allRoadsLayer = L.layerGroup([AroadsLayer, FroadsLayer]).addTo(map);
+let activeRoadLayer = allRoadsLayer;
+
+// =====================================================================
+// 7. STATE LAYER + STATE DROPDOWN
+// =====================================================================
+let statesLayer, stateFeatures = [], detectedStateField = null, highlightedStateLayer = null;
+
+fetch("https://raw.githubusercontent.com/femifast/F-and-A-Roads/refs/heads/main/States.geojson.txt")
+  .then(res => res.json())
+  .then(data => {
+    statesLayer = L.geoJSON(data, { style: { color: "gray", weight: 2, fillOpacity: 0.1 } }).addTo(map);
+    stateFeatures = data.features;
+    const sampleProps = stateFeatures[0].properties;
+    detectedStateField = "statename";  // from your file
+
+    const stateList = document.getElementById("stateList");
+    data.features.forEach(f => {
+      const name = f.properties[detectedStateField] || "Unknown";
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.textContent = name;
+      stateList.appendChild(opt);
+    });
+  });
+
+// =====================================================================
+// 8. LOAD ROAD & STATE INFO JSONS
+// =====================================================================
+fetch("https://raw.githubusercontent.com/femifast/F-and-A-Roads/refs/heads/main/aroads_info.json")
+  .then(res => res.json())
+  .then(data => { aroadsInfo = data; })
+  .catch(err => console.error("Error loading aroads_info:", err));
+
+fetch("https://raw.githubusercontent.com/femifast/F-and-A-Roads/refs/heads/main/froads_info.json")
+  .then(res => res.json())
+  .then(data => { froadsInfo = data; })
+  .catch(err => console.error("Error loading froads_info:", err));
+
+fetch("https://raw.githubusercontent.com/femifast/F-and-A-Roads/refs/heads/main/state_roads_info_FINAL.json")
+  .then(res => res.json())
+  .then(data => { stateInfo = data; })
+  .catch(err => console.error("Error loading state_roads_info:", err));
+
+// =====================================================================
+// 9. SEGMENT HELPERS
+// =====================================================================
+function populateSegments(routeName) {
+  const segmentList = document.getElementById("segmentList");
+  segmentList.innerHTML = `<option value="">-- Select Segment --</option>`;
+
+  const roadType = document.getElementById("roadType").value;
+  const data = roadType === "Aroads" ? ARoads25km : FRoads25km;
+
+  const filtered = data.features.filter(f => {
+    const r = (f.properties.Route || f.properties.ROUTE || "").toString().trim().toUpperCase();
+    const sel = routeName.toString().trim().toUpperCase();
+    return r === sel;
+  });
+
+  filtered.forEach(f => {
+    const opt = document.createElement("option");
+    opt.value = f.properties.Segment;
+    opt.textContent = f.properties.Segment;
+    segmentList.appendChild(opt);
+  });
+
+  segmentList.disabled = filtered.length === 0;
+}
+
+function highlightSegment(segmentId) {
+  const roadType = document.getElementById("roadType").value;
+  const data = roadType === "Aroads" ? ARoads25km : FRoads25km;
+
+  const feature = data.features.find(f => {
+    const seg = (f.properties.Segment || f.properties.segment || "").toString();
+    return seg.trim().toUpperCase() === (segmentId || "").toString().trim().toUpperCase();
+  });
+
+  if (!feature) return;
+
+  clearHighlights();
+
+  activeSegmentLayer = L.geoJSON(feature, {
+    style: { color: "green", weight: 4 },
+    onEachFeature: (f, layer) => {
+      const p = f.properties || {};
+      const rawLen = p.len ?? p.Length ?? p.length ?? 0;
+      const lenKm = Number(rawLen) || 0;
+
+      const popupContent = `
+        <b>Segment:</b> ${String(p.Segment || "N/A")}<br>
+        <b>Route:</b> ${String(p.Route || p.ROUTE || "N/A")}<br>
+        <b>State:</b> ${String(p.State || "N/A")}<br>
+        <b>LGA:</b> ${String(p.Lga || "N/A")}<br>
+        <b>Length:</b> ${lenKm.toFixed(2)} km<br>
+        <b>Speed:</b> ${p.Speed ?? "N/A"}
+      `;
+      layer.bindPopup(popupContent);
+    }
+  }).addTo(map);
+
+  if (activeSegmentLayer.getBounds && activeSegmentLayer.getBounds().isValid()) {
+    map.fitBounds(activeSegmentLayer.getBounds(), { padding: [100, 100] });
+  }
+}
+
+// =====================================================================
+// 10. LOAD ROADS BY TYPE + ROUTE LIST
+// =====================================================================
+function loadRoads(type) {
+  // When road type changes, clear state selection & info only if user is moving to roads
+  if (type === "Aroads" || type === "Froads" || type === "All") {
+    document.getElementById("stateList").value = "";
     if (highlightedStateLayer) {
       map.removeLayer(highlightedStateLayer);
       highlightedStateLayer = null;
     }
+  }
 
-    if (!stateName) {
-      // Reset to full Nigeria view
-      map.fitBounds(nigeriaBounds);
-      return;
+  map.removeLayer(activeRoadLayer);
+  if (activeSegmentLayer) { map.removeLayer(activeSegmentLayer); activeSegmentLayer = null; }
+  clearHighlights();
+
+  const roadList = document.getElementById("roadList");
+  const segmentList = document.getElementById("segmentList");
+  roadList.innerHTML = `<option value="">-- Select Route --</option>`;
+  segmentList.innerHTML = `<option value="">-- Select Segment --</option>`;
+  roadList.disabled = true;
+  segmentList.disabled = true;
+
+  if (routeLabelsLayer) { map.removeLayer(routeLabelsLayer); routeLabelsLayer = null; }
+
+  if (type === "Aroads") {
+    activeRoadLayer = AroadsLayer.addTo(map);
+    populateRouteList(Aroads);
+  } else if (type === "Froads") {
+    activeRoadLayer = FroadsLayer.addTo(map);
+    populateRouteList(Froads);
+  } else {
+    activeRoadLayer = allRoadsLayer.addTo(map);
+  }
+
+  setDefaultInfo();
+}
+
+function populateRouteList(data) {
+  const roadList = document.getElementById("roadList");
+  roadList.innerHTML = `<option value="">-- Select Route --</option>`;
+  roadList.disabled = false;
+  const uniqueRoutes = [...new Set(data.features.map(f => f.properties.ROUTE || f.properties.Route))];
+  uniqueRoutes.forEach(route => {
+    const opt = document.createElement("option");
+    opt.value = route;
+    opt.textContent = route;
+    roadList.appendChild(opt);
+  });
+}
+
+// Highlight route from dropdown (no popup, just zoom + info)
+function highlightRoute(routeName) {
+  if (!routeName) {
+    setDefaultInfo();
+    return;
+  }
+
+  clearHighlights();
+  if (routeLabelsLayer) { map.removeLayer(routeLabelsLayer); routeLabelsLayer = null; }
+
+  const roadType = document.getElementById("roadType").value;
+  let layerGroup = roadType === "Aroads" ? AroadsLayer : FroadsLayer;
+
+  let found = null;
+  layerGroup.eachLayer(l => {
+    const r = l.feature.properties.ROUTE || l.feature.properties.Route;
+    if (r === routeName) found = l;
+  });
+
+  if (found) {
+    highlightedLayer = found;
+    found.setStyle({ color: "green", weight: 5 });
+    map.fitBounds(found.getBounds(), { padding: [100, 100] });
+  }
+
+  // Clear state selection & highlight when a route is chosen
+  document.getElementById("stateList").value = "";
+  if (highlightedStateLayer) {
+    map.removeLayer(highlightedStateLayer);
+    highlightedStateLayer = null;
+  }
+
+  updateInfoForRoute(routeName, roadType);
+  populateSegments(routeName);
+}
+
+// =====================================================================
+// 11. EVENT LISTENERS
+// =====================================================================
+document.getElementById("roadType").addEventListener("change", e => {
+  const v = e.target.value;
+  loadRoads(v);
+});
+
+document.getElementById("roadList").addEventListener("change", e => {
+  highlightRoute(e.target.value);
+});
+
+document.getElementById("segmentList").addEventListener("change", e => {
+  highlightSegment(e.target.value);
+});
+
+// State selection
+document.getElementById("stateList").addEventListener("change", function () {
+  const selectedState = this.value;
+  if (!selectedState || !stateFeatures.length) {
+    // Clear highlight and info if reset
+    if (highlightedStateLayer) {
+      map.removeLayer(highlightedStateLayer);
+      highlightedStateLayer = null;
     }
+    setDefaultInfo();
+    return;
+  }
 
-    const feature = stateFeatures.find(
-      f => f.properties && f.properties[stateNameField] === stateName
-    );
-    if (!feature) return;
+  // Reset road controls when a state is selected
+  document.getElementById("roadType").value = "";
+  document.getElementById("roadList").innerHTML = `<option value="">-- Select Route --</option>`;
+  document.getElementById("segmentList").innerHTML = `<option value="">-- Select Segment --</option>`;
+  document.getElementById("roadList").disabled = true;
+  document.getElementById("segmentList").disabled = true;
 
-    highlightedStateLayer = L.geoJSON(feature, {
+  clearHighlights();
+  if (activeRoadLayer !== allRoadsLayer) {
+    map.removeLayer(activeRoadLayer);
+    activeRoadLayer = allRoadsLayer.addTo(map);
+  }
+
+  const nameField = detectedStateField;
+  let match = null;
+  statesLayer.eachLayer(layer => {
+    const n = (layer.feature.properties[nameField] || "").toString().toLowerCase();
+    if (n === selectedState.toLowerCase()) {
+      match = layer;
+    }
+  });
+
+  if (highlightedStateLayer) {
+    map.removeLayer(highlightedStateLayer);
+    highlightedStateLayer = null;
+  }
+
+  if (match) {
+    highlightedStateLayer = L.geoJSON(match.feature, {
       style: { color: "orange", weight: 3, fillOpacity: 0.2 }
     }).addTo(map);
+    map.fitBounds(match.getBounds(), { padding: [60, 60] });
 
-    // Zoom so all roads + labels within the state are clearly visible
-    const b = highlightedStateLayer.getBounds();
-    if (b.isValid()) {
-      map.fitBounds(b, { padding: [60, 60], maxZoom: 10 });
-    }
+    // Add labels of roads within this state
+    addRouteLabelsWithinState({ features: [...Aroads.features, ...Froads.features] }, selectedState);
   }
 
-  // ===================================
-  // LOAD ROADS BY TYPE
-  // ===================================
-  function loadRoads(type) {
-    map.removeLayer(activeRoadLayer);
-    if (type === "Aroads") {
-      activeRoadLayer = AroadsGroup.addTo(map);
-      populateRouteList(Aroads);
-    } else if (type === "Froads") {
-      activeRoadLayer = FroadsGroup.addTo(map);
-      populateRouteList(Froads);
-    } else {
-      activeRoadLayer = allRoadsLayer.addTo(map);
-    }
-  }
+  updateInfoForState(selectedState);
+});
 
-  // ===================================
-  // POPULATE ROUTE LIST
-  // ===================================
-  function populateRouteList(data) {
-    const roadList = document.getElementById("roadList");
-    roadList.innerHTML = `<option value="">-- Select Route --</option>`;
-    const uniqueRoutes = [...new Set(data.features.map(f => f.properties.ROUTE || f.properties.Route))];
-    uniqueRoutes.forEach(route => {
-      const opt = document.createElement("option");
-      opt.value = route;
-      opt.textContent = route;
-      roadList.appendChild(opt);
-    });
-    roadList.disabled = false;
-  }
-
-  // ===================================
-  // POPULATE SEGMENTS
-  // ===================================
-  function populateSegments(routeName) {
-    const segmentList = document.getElementById("segmentList");
-    segmentList.innerHTML = `<option value="">-- Select Segment --</option>`;
-
-    let data = document.getElementById("roadType").value === "Aroads"
-                ? ARoads25km
-                : FRoads25km;
-
-    const filtered = data.features.filter(f => {
-      const r = (f.properties.Route || f.properties.ROUTE || "").toString().trim().toUpperCase();
-      const sel = routeName.toString().trim().toUpperCase();
-      return r === sel;   // STRICT EXACT MATCH ONLY
-    });
-
-    filtered.forEach(f => {
-      const opt = document.createElement("option");
-      opt.value = f.properties.Segment;
-      opt.textContent = f.properties.Segment;
-      segmentList.appendChild(opt);
-    });
-
-    segmentList.disabled = filtered.length === 0;
-  }
-
-  // ===================================
-  // HIGHLIGHT ROUTE FROM DROPDOWN
-  // ===================================
-  function highlightRoute(routeName) {
-    if (!routeName) return;
-    clearHighlights();
-    let layerGroup = document.getElementById("roadType").value === "Aroads" ? AroadsLayer : FroadsLayer;
-    let found = null;
-    layerGroup.eachLayer(l => {
-      const r = l.feature.properties.ROUTE || l.feature.properties.Route;
-      if (r === routeName) found = l;
-    });
-    if (found) highlightLayer(found);
-    populateSegments(routeName);
-  }
-
-  // ===================================
-  // SEGMENT HIGHLIGHT (25 km)
-  // ===================================
-  function highlightSegment(segmentId) {
-    const roadType = document.getElementById("roadType").value;
-    const data = roadType === "Aroads" ? ARoads25km : FRoads25km;
-
-    const feature = data.features.find(f => {
-      const seg = (f.properties.Segment || f.properties.segment || "").toString();
-      return seg.trim().toUpperCase() === (segmentId || "").toString().trim().toUpperCase();
-    });
-
-    if (!feature) {
-      console.warn("Segment not found:", segmentId);
-      return;
-    }
-
-    clearHighlights();
-
-    activeSegmentLayer = L.geoJSON(feature, {
-      style: { color: "green", weight: 4 },
-      onEachFeature: (f, layer) => {
-        const p = f.properties || {};
-        const rawLen = p.len ?? p.Length_ ?? p.Length ?? p.length ?? 0;
-        const lenNum = typeof rawLen === "string" ? parseFloat(rawLen) : rawLen;
-        const lenKm = Number.isFinite(lenNum) ? lenNum : 0;
-
-        const popupContent = `
-          <b>Segment:</b> ${String(p.Segment || p.segment || "N/A")}<br>
-          <b>Route:</b> ${String(p.Route || p.ROUTE || "N/A")}<br>
-          <b>State:</b> ${String(p.State || p.States || "N/A")}<br>
-          <b>LGA:</b> ${String(p.Lga || "N/A")}<br>
-          <b>Settlement:</b> ${String(p.Settlement || "N/A")}<br>
-          <b>Carriage:</b> ${String(p.Carriage || p.No_of_Carriage || p.carriage || "N/A")}<br>
-          <b>No. of Lanes:</b> ${String(p.No_of_Lane || p.No_of_Lanes || "N/A")}<br>
-          <b>Pavement Type:</b> ${String(p.Pavement_Type || p.Pavement_T || p.Pavement || "N/A")}<br>
-          <b>No. of Junctions:</b> ${String(p.No_of_Junction || p.No_of_Junc || p.No_of_Junctions || "N/A")}<br>
-          <b>No. of Bridges:</b> ${String(p.No_of_Bridge || p.No_of_Brid || p.No_of_Bridges || "N/A")}<br>
-          <b>Length:</b> ${lenKm.toFixed(2)} km
-        `;
-
-        layer.bindPopup(popupContent);
-      }
-    }).addTo(map);
-
-    let opened = false;
-    activeSegmentLayer.eachLayer(l => {
-      if (!opened) {
-        l.openPopup();
-        opened = true;
-      }
-    });
-
-    if (activeSegmentLayer.getBounds && activeSegmentLayer.getBounds().isValid()) {
-      map.fitBounds(activeSegmentLayer.getBounds(), { animate: true, padding: [100, 100] });
-    }
-  }
-
-  // ===================================
-  // EVENT LISTENERS
-  // ===================================
-  document.getElementById("roadType").addEventListener("change", e => loadRoads(e.target.value));
-  document.getElementById("roadList").addEventListener("change", e => highlightRoute(e.target.value));
-  document.getElementById("segmentList").addEventListener("change", e => highlightSegment(e.target.value));
-  document.getElementById("stateList").addEventListener("change", e => selectState(e.target.value));
+// =====================================================================
+setDefaultInfo();
 </script>
 </body>
 </html>
