@@ -1765,33 +1765,43 @@ const FRoads25km = {
 
 
   //////////////////////////////////////////////////////////
-  // STATE LAYER + DROPDOWN
-  //////////////////////////////////////////////////////////
+// STATE LAYER + DROPDOWN  (NOW SORTS ALPHABETICALLY)
+//////////////////////////////////////////////////////////
 
-  let statesLayer, stateFeatures = [], highlightedStateLayer = null;
-  let detectedStateField = null;
+let statesLayer, stateFeatures = [], highlightedStateLayer = null;
+let detectedStateField = null;
 
-  fetch("https://raw.githubusercontent.com/femifast/F-and-A-Roads/refs/heads/main/States.geojson.txt")
-    .then(res => res.json())
-    .then(data => {
-      statesLayer = L.geoJSON(data, {
-        style: { color: "gray", weight: 2, fillOpacity: 0.08 }
-      }).addTo(map);
+fetch("https://raw.githubusercontent.com/femifast/F-and-A-Roads/refs/heads/main/States.geojson.txt")
+  .then(res => res.json())
+  .then(data => {
+    statesLayer = L.geoJSON(data, {
+      style: { color: "gray", weight: 2, fillOpacity: 0.08 }
+    }).addTo(map);
 
-      stateFeatures = data.features;
-      const sampleProps = stateFeatures[0].properties;
-      detectedStateField = "statename"; // we know this from your file
+    stateFeatures = data.features;
+    detectedStateField = "statename"; // known field name
 
-      const stateList = document.getElementById("stateList");
-      data.features.forEach(f => {
-        const name = f.properties[detectedStateField] || "Unknown";
-        const opt = document.createElement("option");
-        opt.value = name;
-        opt.textContent = name;
-        stateList.appendChild(opt);
-      });
-    })
-    .catch(err => console.error("Error loading states geojson:", err));
+    const stateList = document.getElementById("stateList");
+
+    // ✔ Get state names
+    const names = data.features
+      .map(f => f.properties[detectedStateField])
+      .filter(n => n)                 // remove null
+      .sort((a, b) => a.localeCompare(b)); // ✔ alphabetize
+
+    // ✔ Clear old items but keep "All States"
+    stateList.innerHTML = `<option value="">All States</option>`;
+
+    // ✔ Add sorted names
+    names.forEach(name => {
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.textContent = name;
+      stateList.appendChild(opt);
+    });
+  })
+  .catch(err => console.error("Error loading states geojson:", err));
+
 
   //////////////////////////////////////////////////////////
   // INFO JSONs (A, F, State roads)
