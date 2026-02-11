@@ -208,27 +208,32 @@
     }
 
     .route-label {
-      pointer-events: none;
-      text-align: center;
-      color: lightgreen;
-      font-size: 11px;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px #000;
-      white-space: nowrap;
-    }
+  background: none !important;   /* remove Leaflet default box */
+  border: none !important;
+}
 
-    /* Responsive: stack info panel below map on small screens */
-    @media (max-width: 900px) {
-      #layout {
-        flex-direction: column;
-      }
-      #infoPanel {
-        width: 100%;
-        max-width: 100%;
-        box-shadow: 0 -12px 30px rgba(15, 23, 42, 0.75);
-        border-left: none;
-        border-top: 1px solid rgba(148, 163, 184, 0.4);
-      }
+.route-label div {
+  display: inline-block;          /* makes box fit text */
+  width: auto;
+  height: auto;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 8px;
+
+  color: #FF2D55;                 /* keep your red text */
+
+  background: rgba(240,240,240,0.85); /* LIGHT gray */
+  padding: 2px 6px;
+
+  border-radius: 4px;
+
+  white-space: nowrap;
+  line-height: 1.2;
+
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
     }
   </style>
 </head>
@@ -291,7 +296,10 @@
   const map = L.map("map").fitBounds(nigeriaBounds);
   map.setMaxBounds(nigeriaBounds);
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+  subdomains: 'abcd',
+
     maxZoom: 18,
     attribution: "&copy; OpenStreetMap contributors"
   }).addTo(map); // ========================
@@ -1686,7 +1694,7 @@ const FRoads25km = {
 
   function highlightLayer(layer) {
     clearHighlights();
-    layer.setStyle({ color: "#22c55e", weight: 5 });
+    layer.setStyle({ color: "#22c55e", weight: 3 });
     highlightedLayer = layer;
     map.fitBounds(layer.getBounds(), { animate: true, padding: [80, 80] });
 
